@@ -28,14 +28,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container">
         <div className="row">
           {this.adversaires.map((adversaire,index)=>{
             return <PortraitAdversaire adversaire={adversaire}/>
           })
           }
          </div>
-      </div>
     );
   }
 }

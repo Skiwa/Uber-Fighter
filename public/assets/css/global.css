@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Street Fighter";
+  src: url("../fonts/streetfighter.ttf") format("truetype")
+}
+
+
 .inline-icon {
   vertical-align: bottom;
   font-size: 18px !important;
@@ -50,4 +56,33 @@
 
 .rm-padding-bottom {
   padding-bottom: 0 !important;
+}
+
+
+.badge-notification::after{
+  margin: 0px 7px;
+  content: '1';
+  background-color: #F44336;
+  padding: 0px 5px;
+  border-radius: 50% 50%;
+  color: white;
+}
+
+.nav-wrapper{
+  /* background-color:  #400807CC !important; */
+  background-color:  #000000 !important;
+}
+
+.logo-main{
+  font-family: "Street Fighter";
+  font-size: .8em;
+  margin-left: 5px;
+}
+
+.progress-bar {
+  background: linear-gradient(to right, #a2ea4c 10px, #07aa91 10px, #07aa91);
+  color: rgba(0,0,0,0);
+  border-radius: 5px;
+  height: 10px;
+  margin-top: calc(64px/2 - 5px);
 }

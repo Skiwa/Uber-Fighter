@@ -39,7 +39,7 @@ class PortraitAdversaire extends React.Component {
                 </div>
                 <br />
                 {this.props.adversaire.sports.map((sport, index) => {
-                  return <div className="chip">{sport}</div>
+                  return <div className="chip" key={index}>{sport}</div>
                 })}
                 <a className="btn-floating halfway-fab waves-effect waves-light red btn-large btn-provoc">
                   <img src="assets/img/provoc.svg" alt="" />
@@ -71,7 +71,7 @@ class PortraitAdversaire extends React.Component {
                 <div className="row">
                   <div className="col s12 reveal-sports">
                     {this.props.adversaire.sports.map((sport, index) => {
-                      return <div className="chip">{sport}</div>
+                      return <div className="chip" key={index}>{sport}</div>
                     })}
                   </div>
                 </div>

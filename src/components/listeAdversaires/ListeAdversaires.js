@@ -33,12 +33,20 @@ class ListeAdversaires extends React.Component {
 
   render() {
     return (
+
+      <div className="container">
+        <h2 className="center-align">Titre titre titre</h2>
+        <p className="center-align">Sous titre sous titre sous titre</p>
+        <div className="divider"></div>
+        <br/>
+
         <div className="row">
           {this.adversaires.map((adversaire,index)=>{
-            return <PortraitAdversaire adversaire={adversaire}/>
+            return <PortraitAdversaire adversaire={adversaire} key={index}/>
           })
           }
          </div>
+      </div>        
     );
   }
 }

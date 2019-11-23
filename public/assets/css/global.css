@@ -68,10 +68,6 @@
   color: white;
 }
 
-.nav-wrapper{
-  /* background-color:  #400807CC !important; */
-  background-color:  #000000 !important;
-}
 
 .logo-main{
   font-family: "Street Fighter";
@@ -80,9 +76,70 @@
 }
 
 .progress-bar {
-  background: linear-gradient(to right, #a2ea4c 10px, #07aa91 10px, #07aa91);
+  background: linear-gradient(to right, #a2ea4c 8em, #07aa91 10px, #07aa91);
   color: rgba(0,0,0,0);
   border-radius: 5px;
   height: 10px;
   margin-top: calc(64px/2 - 5px);
+  padding-left: 6em;
+}
+
+.nav-wrapper{
+  /* background-color:  #400807CC !important; */
+  background-color:  #000000 !important;
+}
+.sidenav{
+  top: 65px;
+}
+.img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.silverImg{
+  width: 50px;
+}
+.goldImg{
+  width: 50px; margin-left: 21em;
+}
+
+.btn-floating.redCircle{
+  bottom: inherit !important; 
+  right: inherit !important; 
+  height: 3em; width: 3em !important;
+}
+
+.btn-floating.btn-large-redCircle{
+  bottom: inherit !important; 
+  right: inherit !important; 
+  height: 3em; width: 3em !important;
+}
+
+.btn-floating.btn-redCircle i {
+  line-height: 76px;
+  font-size: 2.6em;
+}
+
+.btn-floating.btn-redCircle img {
+  height: 29px;
+  margin-top: 8px;
+  margin-right: 2px;
+  transition: all 0.25s;
+}
+
+.btn-floating.btn-redCircle:hover img {
+  transform: scale(1.2);
+  transform-origin: 50% 50%;
+}
+.miniProvocImg{
+  height: 29px; margin-top: 8px;
+}
+
+.alignRank{
+  vertical-align:top;
+}
+
+.colRank{
+  margin-left: 5.33333333% !important;
 }

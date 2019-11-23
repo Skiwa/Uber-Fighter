@@ -4,7 +4,7 @@ import './PortraitAdversaire.css';
 class PortraitAdversaire extends React.Component {
     render() {
         return (
-          <div className="col s4">
+          <div className="col s3">
             <div className="card medium">
               <div className="card-image">
                 <img src={this.props.adversaire.photo} alt="" />

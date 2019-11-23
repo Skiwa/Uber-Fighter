@@ -1,6 +1,10 @@
 import React from 'react';
 import PortraitAdversaire from '../portraitAdversaire/PortraitAdversaire';
 
+const widthStyle = {
+  width: 3+'em important', height: 3+'em !important'
+}
+
 class AdversaireEntité {
   constructor(photo, prenom, age, poids, taille, description, sports) {
     this.photo = photo;
@@ -27,11 +31,21 @@ class ListeAdversaires extends React.Component {
 
   render() {
     return (
+      <React.Fragment> 
+      <ul id="slide-out" className="sidenav sidenav-fixed">
+          <li><a href="#!">First Sidebar Link</a></li>
+          <li><a href="#!">Second Sidebar Link</a></li>
+      </ul>
 
       <div className="container">
-        <h2 className="center-align">Titre titre titre</h2>
-        <p className="center-align">Sous titre sous titre sous titre</p>
+        
+      <h2 className="center-align">Choisir un adversaire</h2>
+        <p className="center-align">Cliquez sur <a className=" btn-floating waves-effect waves-light red btn-large btn-large-redCircle btn-redCircle" style={widthStyle}>
+       
+            <img src="assets/img/provoc.svg" className="miniProvocImg" alt="" />
+          </a> pour <b>provoquer</b> un adversaire</p>
         <div className="divider"></div>
+        <p><b>23 adversaires disponibles</b></p>
         <br/>
 
         <div className="row">
@@ -40,7 +54,8 @@ class ListeAdversaires extends React.Component {
           })
           }
          </div>
-      </div>        
+      </div>   
+      </React.Fragment>     
     );
   }
 }

@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import ListeAdversaires from "../listeAdversaires/ListeAdversaires";
 import Login from "../login/Login";
+import MesCombats from "../mesCombats/MesCombats";
 
 export default function App() {
   return (
@@ -35,7 +36,7 @@ export default function App() {
             <div className="progress-bar">              </div>
               
           </div>
-          
+         
           <img src="assets/img/gold.png" className="goldImg" alt=""/>
           <b className="alignRank">Gold</b>
           
@@ -54,16 +55,6 @@ export default function App() {
 
     </header>
     
-
-   
-    {/* <div class="container">
-      <h2 class="center-align">Titre titre titre</h2>
-      <p class="center-align">Sous titre sous titre sous titre</p>
-      <div class="divider"></div>
-      <br>
-    </div> */}
-
-
       <div>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
@@ -73,6 +64,9 @@ export default function App() {
           </Route>
           <Route path="/login">
             <Login/>
+          </Route>
+          <Route path="/mesCombats">
+            <MesCombats/>
           </Route>
         </Switch>
       </div>

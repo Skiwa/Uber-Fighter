@@ -1,0 +1,215 @@
+$toast: #112233;
+
+.fullHeight{
+    height: calc(100vh - 64px);
+}
+
+.side-panel{
+    width: 20% !important;
+    padding: 0 !important;
+}
+
+.main{
+    width:60% !important;
+
+    .chat-tools{
+        border-top: rgba(0,0,0,.2) solid 1px;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 0;
+        width:60%;
+        
+        .chat-tools-feature--item{
+            margin: 5px 5px 0 5px;
+        }
+        .material-icons{
+            font-size: 2rem;
+            cursor:pointer;
+            transition: all .2s ease-in-out;
+            &:hover{
+                transform: scale(1.15);
+            }
+        }
+    }
+}
+.conversations{
+    width: 20% !important;
+
+    .conversations--header{
+        margin-bottom: 0;
+        padding: 0 10px;
+        span{
+            font-size: 1.5em;
+        }
+        select{
+
+        }
+    }
+}
+
+.conversations-summary{
+    padding: 5px;
+    cursor: pointer;
+    &:hover{
+        background-color: rgb(245, 245, 245);
+    }
+
+    >.row{
+        margin-bottom:0;
+        padding: 5px 0;
+    }
+
+    .conversations-summary--name{
+        margin-top: 5px;
+        font-size: 1.5em;
+        color: rgba(0,0,0,.5);
+    }
+    
+    .conversations-summary--message{
+        margin-top: 2px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        opacity: .85;
+    }
+    
+    .conversations-summary--message{
+        opacity: .5;
+    }
+    .conversations-summary--date{
+        
+    }
+}
+
+
+
+.conversations-summary__current{
+    background-color: rgb(245,245,255);
+    &:hover{
+        background-color: rgb(235,235,245);
+    }
+}
+
+.conversations-summary__unread{
+    .conversations-summary--name{
+        color: rgba(0,0,0,1);
+    }
+    .conversations-summary--message{
+        font-weight: 500;
+        opacity: .85;
+    }
+}
+
+.chat-message{
+    max-width: 50%;
+    .chat-message--avatar{
+        display:inline-block;
+        height:50px;
+        width:50px;
+        margin-top: 15px;
+    }
+    .chat-message--content{
+        border-radius: 15px;
+        padding:10px;
+        margin:10px;
+        display:inline-block;
+        width:calc(100% - 70px) //70px?
+    }
+}
+.chat-message__sent{
+    margin-left: 50%;
+    .chat-message--avatar{
+        float:right;
+    }
+    .chat-message--content{
+        background-color: #3D3D3D;
+        color: white;
+    }
+}
+
+.chat-message__time {
+    width: 100%;
+    display: block;
+    font-size: .8em;
+}
+  
+.chat-message__info{
+    width: 100%;
+    display: block;
+    font-size: 1em;
+    margin: 10px 0;
+    font-style:italic;
+}
+
+
+.chat-message__received{
+    .chat-message--avatar{
+        float:left;
+    }
+    .chat-message--content{
+        background-color: rgba(0,0,0,.07);
+    }
+}
+
+.info-panel{
+    height:100%;
+    .adversary-info,.fight-info{
+        height: calc(46vh - 32px);  //?
+    }
+    .adversary-info{
+        border-bottom: solid rgba(0,0,0,.2) 1px;
+        strong,span{
+            font-size: 20px;
+        }
+        p{
+            font-size: 14px;
+        }
+        .chip{
+            height:25px;
+            line-height:25px;
+            padding: 0 5px;
+        }
+
+        .card.medium{
+            height:40vh !important;
+            margin: 10px;
+            .card-content{
+                padding: 10px 10px 0px 10px;
+            }
+        }
+    }
+    .fight-info{
+        padding: 20px;
+        .fight-info--title{
+            font-size: 1.5em;
+
+        }
+        .fight-info--action-icon{
+            cursor:pointer;
+            transition: all .2s ease-in-out;
+            &:hover{
+                transform: scale(1.3);
+            }
+        }
+        .fight-info--location{
+            border-radius: 15px;
+            width:16vw;
+            max-height:18vh;
+            object-fit: fill;
+        }
+    }
+}
+
+
+
+.input-field .postfix ~ input { width: 80%; width:calc(100% - 3rem);  margin-left:0px; margin-right: 3rem!important; }
+.input-field .postfix {
+    position: absolute;
+    width: 3rem;
+    right: 0px;
+    font-size: 2rem;
+    -webkit-transition: color .2s;
+    transition: color .2s;
+}

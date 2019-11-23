@@ -22,10 +22,10 @@ export default function App() {
       <div className="navbar-fixed">
       <nav className=" row">
         <div className="nav-wrapper">
-          <div className="col s2">
+          <div className="col s3">
           <a href="#!" className="brand-logo">Uber <span className="logo-main"> Fighter</span></a>
         </div>
-          <div className="col s6 center">
+          <div className="col s5 center offset-s1 colRank">
           <b className="alignRank">Silver</b>
 
             <img src="assets/img/silver.png" className="silverImg" alt=""/>
@@ -40,7 +40,7 @@ export default function App() {
           <b className="alignRank">Gold</b>
           
         </div>
-        <div className="col s4">
+        <div className="col s3 center">
           <ul className="hide-on-med-and-down">
             <li className="active"><Link to="/liste" >Liste d'adversaire</Link></li>
             <li><Link to="/liste" className="badge-notification">Mes combats</Link></li>

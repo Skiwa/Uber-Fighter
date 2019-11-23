@@ -1,11 +1,5 @@
 import React from 'react';
 import PortraitAdversaire from '../portraitAdversaire/PortraitAdversaire';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
 
 class AdversaireEntité {
   constructor(photo, prenom, age, poids, taille, description, sports) {

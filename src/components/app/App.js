@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import ListeAdversaires from "../listeAdversaires/ListeAdversaires";
 import Login from "../login/Login";
+import MesCombats from "../mesCombats/MesCombats";
 
 export default function App() {
   return (
@@ -19,7 +20,8 @@ export default function App() {
             <div className="progress-bar">              </div>
           </div>
           <ul className="right hide-on-med-and-down ">
-            <li><Link to="/liste" className="badge-notification">Mes combats</Link></li>
+            <li><Link to="/liste">Liste</Link></li>
+            <li><Link to="/mesCombats" className="badge-notification">Mes combats</Link></li>
             <li><Link to="/login">Login</Link></li>
             <li><Link to="login">Components</Link></li>
             {/* <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i className="material-icons right">arrow_drop_down</i></a></li> */}
@@ -27,14 +29,6 @@ export default function App() {
         </div>
       </nav>
     </header>
-
-    {/* <div class="container">
-      <h2 class="center-align">Titre titre titre</h2>
-      <p class="center-align">Sous titre sous titre sous titre</p>
-      <div class="divider"></div>
-      <br>
-    </div> */}
-
 
       <div>
         {/* A <Switch> looks through its children <Route>s and
@@ -45,6 +39,9 @@ export default function App() {
           </Route>
           <Route path="/login">
             <Login/>
+          </Route>
+          <Route path="/mesCombats">
+            <MesCombats/>
           </Route>
         </Switch>
       </div>

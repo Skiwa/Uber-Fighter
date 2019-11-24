@@ -207,9 +207,9 @@ class MesCombats extends React.Component {
                       {/* Outils de chat */}
                       <div className="row chat-tools">
                         <div className="col s2 right-align chat-tools-feature" style={{'margin':'22.5px 0'}}>
-                          <i className="material-icons chat-tools-feature--item blue-text tooltipped" data-tooltip="?" data-position="top">add_circle</i>
                           <i className="material-icons chat-tools-feature--item blue-text tooltipped" data-tooltip="GIF" data-position="top">movie_filter</i>
                           <i className="material-icons chat-tools-feature--item blue-text tooltipped" data-tooltip="Image" data-position="top">photo</i>
+                          <i className="material-icons chat-tools-feature--item blue-text tooltipped" data-tooltip="Message vocal" data-position="top">keyboard_voice</i>
                         </div>
                         <div className="input-field col s10 valign-wrapper">
                           <i class="postfix material-icons blue-text tooltipped" data-tooltip="Envoyer" data-position="top" onClick={(e)=>{e.persist();this.sendMessage(e.target.parentElement.children[1].value)}}>send</i>

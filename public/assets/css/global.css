@@ -73,6 +73,10 @@
   font-family: "Street Fighter";
   font-size: .8em;
   margin-left: 5px;
+  color: #f5008b;
+}
+.uberLogo{
+  color: #ffffff;
 }
 
 .progress-bar {
@@ -113,7 +117,7 @@
 .btn-floating.btn-large-redCircle{
   bottom: inherit !important; 
   right: inherit !important; 
-  height: 3em; width: 3em !important;
+  height: 2em; width: 2em !important;
 }
 
 .btn-floating.btn-redCircle i {
@@ -133,7 +137,7 @@
   transform-origin: 50% 50%;
 }
 .miniProvocImg{
-  height: 29px; margin-top: 8px;
+  height: 21px; margin-bottom: 7px;
 }
 
 .alignRank{
@@ -143,3 +147,51 @@
 .colRank{
   margin-left: 5.33333333% !important;
 }
+
+.mainList{
+  padding-left: 4vw !important;
+  width: 75% !important;
+}
+.fullHeightList{
+  height: calc(100vh - -182px)
+}
+
+.textShadow{
+  text-shadow: 2px 2px 4px #000000;
+}
+#videoBG {
+  position: absolute;
+    z-index: -1;
+}
+@media (min-aspect-ratio: 16/9) {
+    #videoBG {
+        width:100%;
+        height: auto;
+    }
+}
+@media (max-aspect-ratio: 16/9) {
+    #videoBG { 
+        width:auto;
+        height: 100%;
+    }
+}
+@media (max-width: 767px) {
+    #videoBG {
+        display: none;
+    }
+    body {
+        background: url('poster.jpg');
+        background-size: cover;
+    }
+  }
+  .overlay {
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }

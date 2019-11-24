@@ -44,7 +44,7 @@ export default function App() {
         <div className="col s3 center">
           <ul className="hide-on-med-and-down">
             <li className="active"><Link to="/liste" >Liste d'adversaire</Link></li>
-            <li><Link to="/liste" className="badge-notification">Mes combats</Link></li>
+            <li><Link to="/mesCombats" className="badge-notification">Mes combats</Link></li>
             <li><Link to="login">Login</Link></li>
 {/*             <li><a className="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i className="material-icons right">arrow_drop_down</i></a></li>
  */}          </ul>

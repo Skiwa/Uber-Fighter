@@ -18,10 +18,11 @@ class PortraitAdversaire extends React.Component {
                     <div className="col s6 right-align">
                       <div>
                         <span className="right">
-                          <i className="material-icons yellow-text star-valign">
+                          <i className="material-icons yellow-text star-valign textShadow">
                             star
                           </i>
-                          4.92
+                          <b className="textShadow">4.92</b>
+                          
                         </span>
                       </div>
                     </div>

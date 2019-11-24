@@ -9,3 +9,43 @@
     -webkit-filter: sepia(100%) hue-rotate(90deg) saturate(400%);
     filter: sepia(100%) hue-rotate(90deg) saturate(400%);
   }
+.fightingGif{
+  width: 10%;
+}
+
+.icon{
+  display: contents;
+}
+.items{
+  vertical-align: top;
+  display: inline-block;
+  /* To horizontally center images and caption */
+  text-align: center;
+  /* The width of the container also implies margin around the images. */
+}
+
+.images {
+  display: flex;
+  padding: 5px;
+}
+.img-holder {
+  position: relative;
+  margin: 5px;
+  align-self: flex-start;
+}
+.img-holder p {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+.thUnset{
+  display: unset;
+}
+.tutoFontSize{
+  font-size: 25px;
+}

@@ -23,8 +23,8 @@ class ListeAdversaires extends React.Component {
   constructor(props) {
     super(props);
 
-    this.adversaires.push(new AdversaireEntité('assets/img/alexandre.jpg','Alexandre',28,90,'1m80', 'J\'aime me battre', ['MMA', 'Krav Maga', 'Karaté']));
-    this.adversaires.push(new AdversaireEntité('assets/img/kaaris.jpg', 'Kaaris', 39, 100, '1m80', 'Je trempe mes cookies dans tes larmes.', ['MMA','Boxe']));
+    this.adversaires.push(new AdversaireEntité('assets/img/alexandre.jpg','Alexandre',28,90,'1m80', 'Ma mission, quand vous êtes dans le cabinet du président de la République, elle est permanente. Quand je rentrais chez moi, je rentrais avec mon arme sur moi, un Glock 43, jusqu\'à mon domicile', ['MMA', 'Krav Maga', 'Karaté']));
+    this.adversaires.push(new AdversaireEntité('assets/img/kaaris.jpg', 'Kaaris', 39, 100, '1m80', 'Les flics fachos rôtissent, même les manchots m’applaudissent.', ['MMA','Boxe']));
     this.adversaires.push(new AdversaireEntité('assets/img/jean-pierre.jpg', 'Jean Pierre', 69, 76, '1m80', 'Coucou TF1.', ['Pétanque']));
     this.adversaires.push(new AdversaireEntité('assets/img/laurent.jpg', 'Laurent', 56, 73, '1m83', 'Salut c\'est Laurent Ruquier.', ['Marche rapide']));
   }

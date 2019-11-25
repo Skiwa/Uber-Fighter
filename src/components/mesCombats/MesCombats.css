@@ -1,3 +1,11 @@
+.pinkCustom {
+  background-color: #F5008B !important;
+}
+
+.pinkCustom-text {
+  color: #F5008B !important;
+}
+
 .fullHeight {
   height: calc(100vh - 64px);
 }
@@ -11,7 +19,31 @@
   width: 60% !important;
 }
 
+.main .chat {
+  height: calc(90vh - 64px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.main .chat::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+  border-radius: 4px;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.main .chat ::-webkit-scrollbar:hover {
+  background: #c6c7ca;
+}
+
+.main .chat ::-webkit-scrollbar-thumb {
+  background: #777779;
+  border-radius: 4px;
+}
+
 .main .chat-tools {
+  height: 10vh;
   border-top: rgba(0, 0, 0, 0.2) solid 1px;
   position: absolute;
   bottom: 0;
@@ -105,7 +137,6 @@
   display: inline-block;
   height: 50px;
   width: 50px;
-  margin-top: 15px;
 }
 
 .chat-message .chat-message--content {
@@ -156,34 +187,16 @@
 }
 
 .info-panel .adversary-info, .info-panel .fight-info {
-  height: calc(46vh - 32px);
+  height: calc(50vh - 32px);
 }
 
 .info-panel .adversary-info {
   border-bottom: solid rgba(0, 0, 0, 0.2) 1px;
+  padding: 20px;
 }
 
-.info-panel .adversary-info strong, .info-panel .adversary-info span {
-  font-size: 20px;
-}
-
-.info-panel .adversary-info p {
-  font-size: 14px;
-}
-
-.info-panel .adversary-info .chip {
-  height: 25px;
-  line-height: 25px;
-  padding: 0 5px;
-}
-
-.info-panel .adversary-info .card.medium {
-  height: 40vh !important;
-  margin: 10px;
-}
-
-.info-panel .adversary-info .card.medium .card-content {
-  padding: 10px 10px 0px 10px;
+.info-panel .adversary-info .title {
+  font-size: 2em;
 }
 
 .info-panel .fight-info {
@@ -208,6 +221,56 @@
   width: 16vw;
   max-height: 18vh;
   object-fit: fill;
+}
+
+.info-panel .fight-info .btn-new-proposition {
+  border-radius: 10px;
+}
+
+.info-panel .fight-info .winner-portrait-pending {
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+
+.info-panel .fight-info .winner-portrait-pending:hover {
+  transform: scale(1.1);
+}
+
+.info-panel .fight-info .winner-portrait-pending img {
+  height: 15vh;
+}
+
+.info-panel .fight-info .notation-portrait img {
+  height: 20vh;
+  width: 20vh;
+  margin: auto;
+}
+
+.info-panel .fight-info .notation-portrait strong {
+  display: block;
+  text-align: center;
+}
+
+.info-panel .fight-info .notation-portrait .notation-portrait--stars {
+  margin-top: 10px;
+  /* default link color is blue */
+}
+
+.info-panel .fight-info .notation-portrait .notation-portrait--stars i {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.info-panel .fight-info .notation-portrait .notation-portrait--stars:hover i {
+  color: #F5008B;
+}
+
+.info-panel .fight-info .notation-portrait .notation-portrait--stars i:hover ~ i {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.info-panel .fight-info .notation-portrait .notation-portrait--stars i {
+  cursor: pointer;
+  font-size: 4em;
 }
 
 .input-field .postfix ~ input {

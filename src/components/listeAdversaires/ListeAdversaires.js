@@ -1,9 +1,7 @@
 import React from 'react';
 import PortraitAdversaire from '../portraitAdversaire/PortraitAdversaire';
 
-const widthStyle = {
-  width: 3+'em important', height: 3+'em !important'
-}
+
 
 class AdversaireEntité {
   constructor(photo, prenom, age, poids, taille, description, sports) {
@@ -27,23 +25,45 @@ class ListeAdversaires extends React.Component {
     this.adversaires.push(new AdversaireEntité('assets/img/kaaris.jpg', 'Kaaris', 39, 100, '1m80', 'Les flics fachos rôtissent, même les manchots m’applaudissent.', ['MMA','Boxe']));
     this.adversaires.push(new AdversaireEntité('assets/img/jean-pierre.jpg', 'Jean Pierre', 69, 76, '1m80', 'Coucou TF1.', ['Pétanque']));
     this.adversaires.push(new AdversaireEntité('assets/img/laurent.jpg', 'Laurent', 56, 73, '1m83', 'Salut c\'est Laurent Ruquier.', ['Marche rapide']));
+    this.adversaires.push(new AdversaireEntité('assets/img/laurent.jpg', 'Laurent', 56, 73, '1m83', 'Salut c\'est Laurent Ruquier.', ['Marche rapide']));
   }
 
   render() {
     return (
       <React.Fragment> 
-      <ul id="slide-out" className="sidenav sidenav-fixed">
-          <li><a href="#!">First Sidebar Link</a></li>
-          <li><a href="#!">Second Sidebar Link</a></li>
-      </ul>
+        <div className="row" style={{margin: 0}}>
+       <div className="col z-depth-3 fullHeightList side-panel conversations">
 
-      <div className="container">
+<div className="row conversations--header valign-wrapper">
+  <div className="col s6 ">
+    <span className="">Combats</span>
+  </div>
+  <div className="col s6">
+    <select multiple onChange={(e)=>{e.persist();this.handleFilterChange(e)}}>
+        <option selected>
+          Tous
+        </option>
+        <option>
+          En cours
+        </option>
+        <option>
+          Terminés
+        </option>
+    </select>
+  </div>
+</div>
+<hr/>
+
+
+</div>
+
+<div className="col fullHeight mainList">
         
       <h2 className="center-align">Choisir un adversaire</h2>
-        <p className="center-align">Cliquez sur <a className=" btn-floating waves-effect waves-light red btn-large btn-large-redCircle btn-redCircle" style={widthStyle}>
+        <p className="center-align">Cliquez sur <p className=" btn-floating red btn-large btn-large-redCircle">
        
             <img src="assets/img/provoc.svg" className="miniProvocImg" alt="" />
-          </a> pour <b>provoquer</b> un adversaire</p>
+          </p> pour <b>provoquer</b> un adversaire</p>
         <div className="divider"></div>
         <p><b>23 adversaires disponibles</b></p>
         <br/>
@@ -55,6 +75,7 @@ class ListeAdversaires extends React.Component {
           }
          </div>
       </div>   
+      </div>
       </React.Fragment>     
     );
   }

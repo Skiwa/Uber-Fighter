@@ -1,4 +1,12 @@
-$toast: #112233;
+$secondary: #F5008B;
+
+.pinkCustom{
+    background-color: $secondary !important;
+}
+
+.pinkCustom-text{
+    color: $secondary !important;
+}
 
 .fullHeight{
     height: calc(100vh - 64px);
@@ -11,8 +19,27 @@ $toast: #112233;
 
 .main{
     width:60% !important;
-
+    .chat{
+        height: calc(90vh - 64px);
+        overflow-y: scroll;
+        overflow-x: hidden;
+        &::-webkit-scrollbar{
+            height:10px;
+            width:10px;
+            border-radius: 4px;
+            background: transparent;
+                transition: all 0.3s ease;
+        }
+        ::-webkit-scrollbar:hover{
+            background: #c6c7ca;
+        }
+        ::-webkit-scrollbar-thumb{
+            background:#777779;
+            border-radius: 4px;
+        }
+    }
     .chat-tools{
+        height:10vh;
         border-top: rgba(0,0,0,.2) solid 1px;
         position: absolute;
         bottom: 0;
@@ -108,7 +135,6 @@ $toast: #112233;
         display:inline-block;
         height:50px;
         width:50px;
-        margin-top: 15px;
     }
     .chat-message--content{
         border-radius: 15px;
@@ -156,29 +182,15 @@ $toast: #112233;
 .info-panel{
     height:100%;
     .adversary-info,.fight-info{
-        height: calc(46vh - 32px);  //?
+        height: calc(50vh - 32px);  //?
     }
     .adversary-info{
         border-bottom: solid rgba(0,0,0,.2) 1px;
-        strong,span{
-            font-size: 20px;
-        }
-        p{
-            font-size: 14px;
-        }
-        .chip{
-            height:25px;
-            line-height:25px;
-            padding: 0 5px;
+        padding: 20px;
+        .title{
+            font-size: 2em;
         }
 
-        .card.medium{
-            height:40vh !important;
-            margin: 10px;
-            .card-content{
-                padding: 10px 10px 0px 10px;
-            }
-        }
     }
     .fight-info{
         padding: 20px;
@@ -199,6 +211,49 @@ $toast: #112233;
             max-height:18vh;
             object-fit: fill;
         }
+        .btn-new-proposition{
+            border-radius:10px;
+        }
+        .winner-portrait-pending{
+            transition: all .2s ease-in-out;
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.1);
+            }
+            img{
+                height: 15vh;
+            }
+        }
+        .notation-portrait{
+            img{
+                height: 20vh;
+                width:20vh;
+                margin:auto;
+            }
+            strong{
+                display:block;
+                text-align: center;
+            }
+            .notation-portrait--stars{
+                margin-top: 10px;
+                /* default link color is blue */
+                i {
+                    color: rgba(0,0,0,.2);
+                }
+                
+                &:hover i{
+                    color: $secondary;
+                }
+
+                i:hover ~ i {
+                    color: rgba(0,0,0,.2);
+                }
+                i{
+                    cursor:pointer;
+                    font-size: 4em;
+                }
+            }
+        }
     }
 }
 
@@ -213,3 +268,4 @@ $toast: #112233;
     -webkit-transition: color .2s;
     transition: color .2s;
 }
+

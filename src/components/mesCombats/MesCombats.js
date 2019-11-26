@@ -1,3 +1,5 @@
+// To Scott and Harry : Here is the concerned module
+
 import React from 'react';
 import './MesCombats.scss';
 import update from 'immutability-helper';
@@ -5,11 +7,7 @@ import {DatePicker, TimePicker} from 'react-materialize';
 
 class MesCombats extends React.Component {
 
-  user={
-    avatar: "benicio.jpg",
-    name: "Benicio"
-  };
-
+  //Fight statuses for the side panel
   STATUS_BEGIN = 0;
   STATUS_PROPOSITION_SENT = 1;
   STATUS_PROPOSITION_RECEIVED = 2;
@@ -17,20 +15,29 @@ class MesCombats extends React.Component {
   STATUS_WINNER_PENDING = 4;
   STATUS_FINISHED = 5;
   
+  //Dates for a presentational use
   today = new Date();
   tomorrow = new Date();
 
+  //Current user
+  user={
+    avatar: "benicio.jpg",
+    name: "Benicio"
+  };
 
+  /**
+   * Create the module and initiate the conversations
+   * @param {*} props 
+   */
   constructor(props){
-    
     super(props);
 
-    
     this.tomorrow.setDate(this.today.getDate()+1);
 
+    //This could be retrieved from an API
     this.state={
       currentConversation: 0,
-      filters:['Tous'],
+      filters:['All'],
       conversations: [
         {
           messages: [
@@ -46,7 +53,7 @@ class MesCombats extends React.Component {
             },
             {
               type:"info",
-              content: "Mamoutov propose un combat à Saint Bruno, le "+(this.tomorrow.toLocaleDateString())+" à 23h00",
+              content: "Mamoutov propose a fight in Saint Bruno, on "+(this.tomorrow.toLocaleDateString())+" at 11:00pm",
               time: new Date('October 21, 2019 02:02:02')
             }
           ],
@@ -100,22 +107,22 @@ class MesCombats extends React.Component {
             },
             {
               type:"info",
-              content: "Kaaris propose un combat à Orly, le 01/08/2018 à 15h00",
+              content: "Kaaris propose a fight in Orly, on 01/08/2018 at 3:00pm",
               time: new Date('August 1, 2020 02:02:02')
             },
             {
               type:"info",
-              content: "Vous avez accepté la proposition.",
+              content: "You accepted the proposition.",
               time: new Date('August 1, 2020 02:02:02')
             },
             {
               type: "info",
-              content: "Combat terminé.",
+              content: "Fight end.",
               time: new Date('August 1, 2018,02:02:02')
             },
             {
               type: "info",
-              content: "Vainqueur : Kaaris",
+              content: "Winner : Kaaris",
               time: new Date('August 3, 2018 02:02:02')
             }
           ],
@@ -138,36 +145,35 @@ class MesCombats extends React.Component {
   }
 
   /**
-   * Lancé quand la page a chargé
+   * Module has rendered
    */
   componentDidMount(){
-    //Fixe la première conversation comme étant celle en cours
+    //Set the first conversation as the current one
     this.changeCurrentConversation(0);
   }
 
 
   render() {
-
         return (
           <div className="" style={{'overflowY':'hidden'}}>
               <div className="row" style={{marginBottom: 0}}>
-                  {/* Panneau de messages */}
+                  {/* Conversations panel */}
                   <div className="col z-depth-3 fullHeight side-panel conversations">
 
                     <div className="row conversations--header valign-wrapper">
                       <div className="col s6 ">
-                        <span className="">Combats</span>
+                        <span className="">Fights</span>
                       </div>
                       <div className="col s6">
                         <select multiple onChange={(e)=>{e.persist();this.handleFilterChange(e)}}>
                             <option selected>
-                              Tous
+                              All
                             </option>
                             <option>
-                              En cours
+                              Current
                             </option>
                             <option>
-                              Terminés
+                              Finished
                             </option>
                         </select>
                       </div>
@@ -177,7 +183,7 @@ class MesCombats extends React.Component {
 
                     <div className="row" style={{margin: 0}}>
                       {this.state.conversations.map((conversation,index)=>{
-                          if((conversation.status !== this.STATUS_FINISHED && this.state.filters.includes('En cours')) || (conversation.status === this.STATUS_FINISHED && this.state.filters.includes('Terminés')) || (this.state.filters.includes('Tous'))){
+                          if((conversation.status !== this.STATUS_FINISHED && this.state.filters.includes('Current')) || (conversation.status === this.STATUS_FINISHED && this.state.filters.includes('Finished')) || (this.state.filters.includes('All'))){
                             return (
                               <div className={"col s12 conversations-summary " + (this.state.currentConversation === index ? 'conversations-summary__current ' : '') + (conversation.unread ? 'conversations-summary__unread' : '')} key={index} onClick={()=>this.changeCurrentConversation(index)}>
                                 <div className="row valign-wrapper">
@@ -202,25 +208,25 @@ class MesCombats extends React.Component {
                     </div>
                   </div>
 
-                  {/* Panneau de discussion */}
+                  {/* Chat panel */}
                   <div className="col fullHeight main">
                     <div className="chat">
                       <div className="row" style={{"paddingTop" : "20px"}}>
                         <img className="col s2 offset-s5 circle" src={"/assets/img/"+this.state.conversations[this.state.currentConversation].adversary.avatar} alt=""/>
                         <span className="col s12 center-align" style={{"fontSize": "2em"}}>{this.state.conversations[this.state.currentConversation].adversary.name}</span>
-                        <span className="col s12 center-align" style={{"fontSize": "1em"}}>En ligne il y a {this.state.conversations[this.state.currentConversation].adversary.lastOnline}</span>
+                        <span className="col s12 center-align" style={{"fontSize": "1em"}}>Last online : {this.state.conversations[this.state.currentConversation].adversary.lastOnline}</span>
                       </div>
                       {
                         this.state.conversations[this.state.currentConversation].messages.map((message,index)=>{
                           return (
                             <React.Fragment key={index}>
-                              {/* Heure de début de la conversation */}
+                              {/* Info message : conversation start time */}
                               {index===0 && <React.Fragment><span className="center-align grey-text chat-message__time">{message.time.toLocaleTimeString().substring(0, message.time.toLocaleTimeString().length-3)}</span></React.Fragment>}
                               
-                              {/* Message d'information */}
+                              {/* Info message template */}
                               {message.type==='info' && <React.Fragment><span className="center-align grey-text text-darken-2 chat-message__info">{message.content}</span></React.Fragment>}
 
-                              {/* Message classique */}
+                              {/* Default message template */}
                               {message.type!=='info' &&
                                 <div className={"chat-message " + (message.type === 'received' ? 'chat-message__received ' : '') + (message.type === 'sent' ? 'chat-message__sent ' : '')}>
                                   <img src={"/assets/img/"+(message.type=== 'received' ? this.state.conversations[this.state.currentConversation].adversary.avatar : '') + (message.type=== 'sent' ? this.user.avatar : '')} className="responsive-img circle chat-message--avatar" alt=""/>
@@ -233,41 +239,41 @@ class MesCombats extends React.Component {
                           )
                         })
                       }
-
                       </div>
-                      {/* Outils de chat */}
+                      
+                      {/* Chat tools */}
                       <div className="row chat-tools">
                         <div className="col s2 right-align chat-tools-feature" style={{'margin':'22.5px 0'}}>
                           <i className="material-icons chat-tools-feature--item pinkCustom-text tooltipped" data-tooltip="GIF" data-position="top">movie_filter</i>
                           <i className="material-icons chat-tools-feature--item pinkCustom-text tooltipped" data-tooltip="Image" data-position="top">photo</i>
-                          <i className="material-icons chat-tools-feature--item pinkCustom-text tooltipped" data-tooltip="Message vocal" data-position="top">keyboard_voice</i>
+                          <i className="material-icons chat-tools-feature--item pinkCustom-text tooltipped" data-tooltip="Vocal message" data-position="top">keyboard_voice</i>
                         </div>
                         <div className="input-field col s10 valign-wrapper">
-                          <i class="postfix material-icons pinkCustom-text tooltipped" data-tooltip="Envoyer" data-position="top"  onClick={(e)=>{e.persist();this.sendMessage(e.target.parentElement.children[1].value)}}>send</i>
+                          <i class="postfix material-icons pinkCustom-text tooltipped" data-tooltip="Send" data-position="top"  onClick={(e)=>{e.persist();this.sendMessage(e.target.parentElement.children[1].value)}}>send</i>
                           <input id="message" type="text" onKeyUp={(e)=>{e.persist();this.handleKeyUpSendMessage(e)}}/>
-                          <label for="message">Envoyer un message à {this.state.conversations[this.state.currentConversation].adversary.name}</label>
+                          <label for="message">Send a message to {this.state.conversations[this.state.currentConversation].adversary.name}</label>
                         </div>
                       </div>
                   </div>
 
-                  {/* Panneau d'options */}
+                  {/* Option panel */}
                   <div className="col fullHeight side-panel z-depth-1 info-panel">
                       <div className="adversary-info">
                         {/* Adversary portrait */}
                         <div className="row">
                           <div className="col s12 center-align">
-                            <span className="title">
+                            <span className="title_">
                               <strong>{this.state.conversations[this.state.currentConversation].adversary.name}</strong>, {this.state.conversations[this.state.currentConversation].adversary.age}
                             </span>
                           </div>
                         </div>
                         <div className="row">
                           <div className="col s5">
-                            <strong>Poids :</strong> {this.state.conversations[this.state.currentConversation].adversary.weight}kg <br/>
-                            <strong>Rang : </strong> {this.state.conversations[this.state.currentConversation].adversary.rank}
+                            <strong>Weight :</strong> {this.state.conversations[this.state.currentConversation].adversary.weight}kg <br/>
+                            <strong>Rank : </strong> {this.state.conversations[this.state.currentConversation].adversary.rank}
                           </div>
                           <div className="col s5">
-                            <strong>Taille :</strong>  {this.state.conversations[this.state.currentConversation].adversary.height}
+                            <strong>Height :</strong>  {this.state.conversations[this.state.currentConversation].adversary.height}
                           </div>
                         </div>
 
@@ -278,7 +284,7 @@ class MesCombats extends React.Component {
                         <br />
                         <br />
                         <div className="row center-align">
-                        <strong>Sports pratiqués :</strong> <br/><br/>
+                        <strong>Sports :</strong> <br/><br/>
                           <div className="col s12 reveal-sports ">
                             {this.state.conversations[this.state.currentConversation].adversary.sports.map((sport, index) => {
                               return <div className="chip" key={index}>{sport}</div>
@@ -296,7 +302,7 @@ class MesCombats extends React.Component {
                           <React.Fragment>
                             
                             <div className="row" style={{'marginBottom': '5px'}}>
-                              <span className="col s12 center-align fight-info--title">Proposer une rencontre</span>
+                              <span className="col s12 center-align fight-info--title">Propose a fight</span>
                             </div>
 
                             <div className="row" style={{'marginBottom': '5px'}}>
@@ -306,17 +312,17 @@ class MesCombats extends React.Component {
                               </div>
                               <div className="input-field col s6">
                                 <TimePicker options={{'fromNow':1}} id="propositon_time"/>
-                                <label for="propositon_time">Heure</label>
+                                <label for="propositon_time">Time</label>
                               </div>
                               <div className="input-field col s12">
                                 <textarea id="propositon_location" class="materialize-textarea"></textarea>
-                                <label for="propositon_location">Lieu</label>
+                                <label for="propositon_location">Location</label>
                               </div>
 
                             </div>
                             <div className="row">
                               <div className="col s12 center-align">
-                                <a className="waves-effect waves-light btn btn-large pinkCustom" href='# ' onClick={()=>{this.changeConversationStatus(this.STATUS_PROPOSITION_SENT)}}><i class="material-icons right">send</i>Envoyer</a>
+                                <a className="waves-effect waves-light btn btn-large pinkCustom" href='# ' onClick={()=>{this.changeConversationStatus(this.STATUS_PROPOSITION_SENT)}}><i class="material-icons right">send</i>Send</a>
                               </div>
                             </div>
                           </React.Fragment>
@@ -326,12 +332,12 @@ class MesCombats extends React.Component {
                         {this.state.conversations[this.state.currentConversation].status === this.STATUS_PROPOSITION_RECEIVED && 
                           <React.Fragment>
                             <div className="row" style={{'marginBottom': '5px'}}>
-                              <span className="col s12 center-align fight-info--title">Lieu de rencontre</span>
+                              <span className="col s12 center-align fight-info--title">Fight proposition</span>
                             </div>
                             <div className="row">
                               <div className="col s12 center-align">
                                 <img src="/assets/img/saint-bruno.jpg" alt="" className="fight-info--location"/><br/>
-                                <span className="center-align">St-Bruno <br/>82 Cours Berriat, 38000 Grenoble <br/>Le <strong>{this.tomorrow.toLocaleDateString()}</strong> à <strong>23h00</strong></span>
+                                <span className="center-align">St-Bruno <br/>82 Cours Berriat, 38000 Grenoble <br/><strong>{this.tomorrow.toLocaleDateString()}</strong> at <strong>11:00pm</strong></span>
                               </div>
                             </div>
                             <div className="row"  style={{'marginBottom':'0'}}>
@@ -353,20 +359,20 @@ class MesCombats extends React.Component {
                         {this.state.conversations[this.state.currentConversation].status === this.STATUS_PROPOSITION_SENT && 
                           <React.Fragment>
                             <div className="row" style={{'marginBottom': '5px'}}>
-                              <span className="col s12 center-align fight-info--title">Lieu de rencontre</span>
-                              <span className="col s12 pinkCustom-text center-align" style={{'fontWeight':'500'}}>(En attente)</span>
+                              <span className="col s12 center-align fight-info--title">Fight proposition</span>
+                              <span className="col s12 pinkCustom-text center-align" style={{'fontWeight':'500'}}>(Pending)</span>
                             </div>
                             <div className="row">
                               <div className="col s12 center-align">
                                 <img src="/assets/img/saint-bruno.jpg" alt="" className="fight-info--location"/><br/>
-                                <span className="center-align">St-Bruno <br/>82 Cours Berriat, 38000 Grenoble <br/>Le <strong>{this.tomorrow.toLocaleDateString()}</strong> à <strong>23h00</strong></span>
+                                <span className="center-align">St-Bruno <br/>82 Cours Berriat, 38000 Grenoble <br/><strong>{this.tomorrow.toLocaleDateString()}</strong> at <strong>11:00pm</strong></span>
                               </div>
                             </div>
                             <div className="row">
                               <br/>
                               <div className="col s12 center-align" >
                                 <div className="row">
-                                  <i>En attente d'acception de {this.state.conversations[this.state.currentConversation].adversary.name}</i>
+                                  <i>Waiting for {this.state.conversations[this.state.currentConversation].adversary.name}'s approval</i>
                                 </div>
                               </div>
                             </div>
@@ -377,12 +383,12 @@ class MesCombats extends React.Component {
                         {this.state.conversations[this.state.currentConversation].status === this.STATUS_FIGHT_PENDING && 
                           <React.Fragment>
                             <div className="row" style={{'marginBottom': '5px'}}>
-                              <span className="col s12 center-align fight-info--title">Lieu de rencontre</span>
+                              <span className="col s12 center-align fight-info--title">Fight proposition</span>
                             </div>
                             <div className="row">
                               <div className="col s12 center-align">
                                 <img src="/assets/img/saint-bruno.jpg" alt="" className="fight-info--location"/><br/>
-                                <span className="center-align">82 Cours Berriat, 38000 Grenoble <br/>Le <strong>{this.tomorrow.toLocaleDateString()}</strong> à <strong>23h00</strong></span>
+                                <span className="center-align">82 Cours Berriat, 38000 Grenoble <br/><strong>{this.tomorrow.toLocaleDateString()}</strong> at <strong>11:00pm</strong></span>
                               </div>
                             </div>
                             <div className="row" style={{'marginTop':'-20px'}}>
@@ -390,7 +396,7 @@ class MesCombats extends React.Component {
                               <div className="col s12 center-align" >
                                 <div className="row">
                                   <div className="col s12 center-align">
-                                    <a className="waves-effect waves-light btn btn-large pinkCustom" href='# ' onClick={()=>{this.changeConversationStatus(this.STATUS_WINNER_PENDING)}}>Combat terminé</a>
+                                    <a className="waves-effect waves-light btn btn-large pinkCustom" href='# ' onClick={()=>{this.changeConversationStatus(this.STATUS_WINNER_PENDING)}}>Fighting done</a>
                                   </div>
                                 </div>
                               </div>
@@ -402,22 +408,22 @@ class MesCombats extends React.Component {
                         {this.state.conversations[this.state.currentConversation].status === this.STATUS_WINNER_PENDING && 
                           <React.Fragment>
                             <div className="row" style={{'marginBottom': '5px'}}>
-                              <span className="col s12 center-align fight-info--title">Fin du combat</span>
+                              <span className="col s12 center-align fight-info--title">Fighting done</span>
                             </div>
                             <div className="row">
                               <br/><br/><br/>
                               <div className="col s12 center-align" >
                                 <div className="row">
-                                  <span className="pinkCustom-text" style={{'fontWeight':'500'},{'fontSize':'1.5em'}}>Vainqueur :</span>
+                                  <span className="pinkCustom-text" style={{'fontWeight':'500'},{'fontSize':'1.5em'}}>Winner :</span>
                                   <br/> <br/>
                                   <div className="col s12 center-align">
                                     <div className="row">
                                       <div className="col s6 winner-portrait-pending">
-                                        <img className="responsive-img circle tooltipped" data-position="top" data-tooltip='toast' src={"/assets/img/"+this.user.avatar} alt="" onClick={()=>{this.changeConversationStatus(this.STATUS_FINISHED, {winner: this.user.name})}}></img>
+                                        <img className="responsive-img circle" src={"/assets/img/"+this.user.avatar} alt="" onClick={()=>{this.changeConversationStatus(this.STATUS_FINISHED, {winner: this.user.name})}}></img>
                                         <strong className="bold">{this.user.name}</strong>
                                       </div>
                                       <div className="col s6 winner-portrait-pending">
-                                        <img className="responsive-img circle tooltipped" data-position="top" data-tooltip="{this.state.conversations[this.state.currentConversation].adversary.name}" src={"/assets/img/"+this.state.conversations[this.state.currentConversation].adversary.avatar} alt="" onClick={()=>{this.changeConversationStatus(this.STATUS_FINISHED, {winner: this.state.conversations[this.state.currentConversation].adversary.name})}}></img>
+                                        <img className="responsive-img circle" src={"/assets/img/"+this.state.conversations[this.state.currentConversation].adversary.avatar} alt="" onClick={()=>{this.changeConversationStatus(this.STATUS_FINISHED, {winner: this.state.conversations[this.state.currentConversation].adversary.name})}}></img>
                                         <strong>{this.state.conversations[this.state.currentConversation].adversary.name}</strong>
                                       </div>
                                     </div>
@@ -432,7 +438,7 @@ class MesCombats extends React.Component {
                         {this.state.conversations[this.state.currentConversation].status === this.STATUS_FINISHED && 
                           <React.Fragment>
                             <div className="row" style={{'marginBottom': '5px'}}>
-                              <span className="col s12 center-align fight-info--title">Notez {this.state.conversations[this.state.currentConversation].adversary.name}</span>
+                              <span className="col s12 center-align fight-info--title">Rate {this.state.conversations[this.state.currentConversation].adversary.name}</span>
                             </div>
                             <div className="row">
                               <br/><br/>
@@ -464,25 +470,13 @@ class MesCombats extends React.Component {
       }
 
 
-    /**
-     * Change la conversation actuelle
-     * @param number index 
-     */
-    changeCurrentConversation(index){
-      //Change la conversation actuelle
-      this.setState({currentConversation:index});
-      //Marque la conversation comme lue
-      if(this.state.conversations[index].unread){
-        this.setState(
-          {
-            conversations: update(this.state.conversations, {[index]: {unread:{$set:false}}})
-          }
-        );
-      }
-    }
+
+    /*----------------------*/
+    /*------- Events -------*/
+    /*----------------------*/
 
     /**
-     * Met à jour la liste des filtres en fonction du select
+     * Updates the filters list
      * @param event e 
      */
     handleFilterChange(e){
@@ -494,124 +488,148 @@ class MesCombats extends React.Component {
       this.setState({filters: selected});
     }
 
-
     /**
-     * Propose un combat
-     */
-    sendFightProposition(){
-      //Maj de la conversation
-      this.setState(
-        {
-          conversations: update(this.state.conversations, {[this.state.currentConversation]: {messages: {$push: [{type:'info',content:'Vous avez proposé un combat à Saint Bruno le '+this.tomorrow.toLocaleDateString()+' à 23h00', time: new Date()}] }}})
-        }
-      )
-    }
-
-    /**
-     * Déclare la fin de combat
-     */
-    declareFightEnd(){
-      //Maj de la conversation
-      this.setState(
-        {
-          conversations: update(this.state.conversations, {[this.state.currentConversation]: {messages: {$push: [{type:'info',content:'Combat terminé.', time: new Date()}] }}})
-        }
-      )
-    }
-
-    /**
-     * Déclare le vainqueur
-     */
-    declareWinner(winner){
-      //Maj de la conversation
-      this.setState(
-        {
-          conversations: update(this.state.conversations, {[this.state.currentConversation]: {messages: {$push: [{type:'info',content:['Vainqueur : '+winner], time: new Date()}] }}})
-        }
-      )
-    }
-
-
-
-    /**
-     * Accepte une proposition
-     */
-    acceptFightProposition(){
-      //Maj de la conversation
-      this.setState(
-        {
-          conversations: update(this.state.conversations, {[this.state.currentConversation]: {messages: {$push: [{type:'info',content:'Vous avez accepté la proposition.', time: new Date()}] }}})
-        }
-      )
-      setTimeout(()=>{this.changeConversationStatus(this.STATUS_FIGHT_PENDING);}, 0);  //TODO : à remplacer par async/await        
-    }
-
-    /**
-     * Refuse une proposition
-     */
-    refuseFightProposition(){
-      //maj de la conversation
-      this.setState(
-        {
-          conversations: update(this.state.conversations, {[this.state.currentConversation]: {messages: {$push: [{type:'info',content:'Vous avez refusé la proposition.', time: new Date()}] }}})
-        }
-      )
-      setTimeout(()=>{this.changeConversationStatus(this.STATUS_BEGIN);}, 0);  //TODO : à remplacer par async/await
-    }
-
-    /**
-     * Envoie un message
-     * @param Message message 
-     */
-    sendMessage(message){
-      if(message){
-        this.setState(
-          {
-            conversations: update(this.state.conversations, {[this.state.currentConversation]: {messages: {$push: [{type:'sent',content:[message], time: new Date()}] }}})
-          }
-        )
-        document.querySelector('#message').value="";
-      }
-    }
-
-
-    /**
-     * Envoie un message avec la touche entrée
+     * Send a message with the Enter key
      * @param {*} e 
      */
     handleKeyUpSendMessage(e){
       if(e.nativeEvent.code === 'Enter'){
-        console.log("ici",e);
         this.sendMessage(e.target.value);
       }
     }
 
 
+
+    /*----------------------*/
+    /* Conversation actions */
+    /*----------------------*/
+
+    /**
+     * Change the current conversation
+     * @param number conversation index
+     */
+    changeCurrentConversation(index){
+      //Change the current conversation
+      this.setState({currentConversation:index});
+      //Set the conversation as read
+      if(this.state.conversations[index].unread){
+        this.setState(
+          {
+            conversations: update(this.state.conversations, {[index]: {unread:{$set:false}}})
+          }
+        );
+      }
+    }
+
+    
+    /**
+     * Send a message
+     * @param Message message 
+     */
+    sendMessage(message){
+      if(message){
+        //Updates the conversation
+        this.setState(
+          {
+            conversations: update(this.state.conversations, {[this.state.currentConversation]: {messages: {$push: [{type:'sent',content:[message], time: new Date()}] }}})
+          }
+        )
+        //Resets the input
+        document.querySelector('#message').value="";
+      }
+    }
+
+
+
+    /*---------------------*/
+    /*--- Fight actions ---*/
+    /*---------------------*/
+
+    /**
+     * Propose a fight
+     */
+    sendFightProposition(){
+      //Updates the conversation
+      this.setState(
+        {
+          conversations: update(this.state.conversations, {[this.state.currentConversation]: {messages: {$push: [{type:'info',content:'You proposed a fight in Saint Bruno the '+this.tomorrow.toLocaleDateString()+' at 11:00pm', time: new Date()}] }}})
+        }
+      )
+    }
+
+    /**
+     * Declare the end of a fight
+     */
+    declareFightEnd(){
+      //Updates the conversation
+      this.setState(
+        {
+          conversations: update(this.state.conversations, {[this.state.currentConversation]: {messages: {$push: [{type:'info',content:'Fight ended.', time: new Date()}] }}})
+        }
+      )
+    }
+
+    /**
+     * Declare the winner
+     */
+    declareWinner(winner){
+      //Updates the conversation
+      this.setState(
+        {
+          conversations: update(this.state.conversations, {[this.state.currentConversation]: {messages: {$push: [{type:'info',content:['Winner : '+winner], time: new Date()}] }}})
+        }
+      )
+    }
+
+    /**
+     * Accept a fight proposition
+     */
+    acceptFightProposition(){
+      //Updates the conversation
+      this.setState(
+        {
+          conversations: update(this.state.conversations, {[this.state.currentConversation]: {messages: {$push: [{type:'info',content:'You accepted the proposition.', time: new Date()}] }}})
+        }
+      )
+      setTimeout(()=>{this.changeConversationStatus(this.STATUS_FIGHT_PENDING);}, 0);  //TODO : replace with async/await        
+    }
+
+    /**
+     * Refuse a proposition
+     */
+    refuseFightProposition(){
+      //Updates the conversation
+      this.setState(
+        {
+          conversations: update(this.state.conversations, {[this.state.currentConversation]: {messages: {$push: [{type:'info',content:'You refused the proposition.', time: new Date()}] }}})
+        }
+      )
+      setTimeout(()=>{this.changeConversationStatus(this.STATUS_BEGIN);}, 0);  //TODO : replace with async/await       
+    }
+
+    /**
+     * Change the status
+     * @param {*} status 
+     * @param {*} options 
+     */
     changeConversationStatus(status, options){
       
       if(status === this.STATUS_PROPOSITION_SENT){
-        setTimeout(()=>{ this.sendFightProposition(); }, 0);  //TODO : à remplacer par async/await        
+        setTimeout(()=>{ this.sendFightProposition(); }, 0);         //TODO : replace with async/await            
       }
       if(status === this.STATUS_WINNER_PENDING){
-        setTimeout(()=>{ this.declareFightEnd(); }, 0);  //TODO : à remplacer par async/await        
+        setTimeout(()=>{ this.declareFightEnd(); }, 0);              //TODO : replace with async/await       
       }
       if(status === this.STATUS_FINISHED){
-        setTimeout(()=>{ this.declareWinner(options.winner); }, 0);  //TODO : à remplacer par async/await        
+        setTimeout(()=>{ this.declareWinner(options.winner); }, 0);  //TODO : replace with async/await          
       }
-
 
       this.setState(
         {
           conversations: update(this.state.conversations, {[this.state.currentConversation]: {status:{$set:status}}})
         }
       );
-
-
-      console.log("new status", status);
     }
-
-
-
 }
 
 export default MesCombats;

@@ -237,12 +237,12 @@ class MesCombats extends React.Component {
                       </div>
                       {/* Outils de chat */}
                       <div className="row chat-tools">
-                        <div className="col s2 right-align chat-tools-feature" style={{'margin':'22.5px 0'}}>
+                        <div className="col s2 right-align chat-tools-feature" style={{'margin':'22.5px 0'},{'marginBottom':'0'}}>
                           <i className="material-icons chat-tools-feature--item pinkCustom-text tooltipped" data-tooltip="GIF" data-position="top">movie_filter</i>
                           <i className="material-icons chat-tools-feature--item pinkCustom-text tooltipped" data-tooltip="Image" data-position="top">photo</i>
                           <i className="material-icons chat-tools-feature--item pinkCustom-text tooltipped" data-tooltip="Message vocal" data-position="top">keyboard_voice</i>
                         </div>
-                        <div className="input-field col s10 valign-wrapper">
+                        <div className="input-field col s10 valign-wrapper chat-tools-chat">
                           <i class="postfix material-icons pinkCustom-text tooltipped" data-tooltip="Envoyer" data-position="top"  onClick={(e)=>{e.persist();this.sendMessage(e.target.parentElement.children[1].value)}}>send</i>
                           <input id="message" type="text" onKeyUp={(e)=>{e.persist();this.handleKeyUpSendMessage(e)}}/>
                           <label for="message">Envoyer un message à {this.state.conversations[this.state.currentConversation].adversary.name}</label>
@@ -256,7 +256,7 @@ class MesCombats extends React.Component {
                         {/* Adversary portrait */}
                         <div className="row">
                           <div className="col s12 center-align">
-                            <span className="title">
+                            <span className="adversary-info--title">
                               <strong>{this.state.conversations[this.state.currentConversation].adversary.name}</strong>, {this.state.conversations[this.state.currentConversation].adversary.age}
                             </span>
                           </div>
@@ -274,8 +274,6 @@ class MesCombats extends React.Component {
                         <blockquote>
                           <em>{this.state.conversations[this.state.currentConversation].adversary.description}</em>
                         </blockquote>
-                        <br />
-                        <br />
                         <br />
                         <div className="row center-align">
                         <strong>Sports pratiqués :</strong> <br/><br/>
@@ -328,7 +326,7 @@ class MesCombats extends React.Component {
                             <div className="row" style={{'marginBottom': '5px'}}>
                               <span className="col s12 center-align fight-info--title">Lieu de rencontre</span>
                             </div>
-                            <div className="row">
+                            <div className="row" style={{'marginBottom':'10px'}}>
                               <div className="col s12 center-align">
                                 <img src="/assets/img/saint-bruno.jpg" alt="" className="fight-info--location"/><br/>
                                 <span className="center-align">St-Bruno <br/>82 Cours Berriat, 38000 Grenoble <br/>Le <strong>{this.tomorrow.toLocaleDateString()}</strong> à <strong>23h00</strong></span>
@@ -336,7 +334,7 @@ class MesCombats extends React.Component {
                             </div>
                             <div className="row"  style={{'marginBottom':'0'}}>
                               <div className="col s12 center-align" >
-                                <div className="row">
+                                <div className="row" style={{'marginBottom':'0'}}>
                                   <div className="col s3 offset-s3" >
                                     <img src="/assets/img/deny.svg" onClick={()=>this.refuseFightProposition()} alt="" className="responsive-img fight-info--action-icon" data-position="top" data-tooltip="Refuser" title="Refuser cette proposition" />
                                   </div>
@@ -435,19 +433,71 @@ class MesCombats extends React.Component {
                               <span className="col s12 center-align fight-info--title">Notez {this.state.conversations[this.state.currentConversation].adversary.name}</span>
                             </div>
                             <div className="row">
-                              <br/><br/>
+                              {/* <br/> */}
                               <div className="col s12 center-align" >
                                 <div className="row">
                                   <div className="col s12 center-align">
                                     <div className="row">
                                       <div className="col s12 notation-portrait center-align">
                                         <img className="circle tooltipped" data-position="top" data-tooltip="{this.state.conversations[this.state.currentConversation].adversary.name}" src={"/assets/img/"+this.state.conversations[this.state.currentConversation].adversary.avatar} alt=""></img>
-                                        <strong>{this.state.conversations[this.state.currentConversation].adversary.name}</strong>
-                                        <div className="notation-portrait--stars">
-                                          <i className="material-icons">star</i>
-                                          <i className="material-icons">star</i>
-                                          <i className="material-icons">star</i>
+                                        <strong style={{'marginBottom':'5px'}}>{this.state.conversations[this.state.currentConversation].adversary.name}</strong>
+                                        <div className="notation-portrait--stars valign-wrapper">
+                                          <strong>Fair-play</strong>
+                                          <div>
+                                            <span>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                            </span>
+                                          </div>
                                         </div>
+                                        <div className="notation-portrait--stars valign-wrapper">
+                                          <strong>Respect</strong>
+                                          <div>
+                                            <span>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                            </span>
+                                          </div>
+                                        </div>
+                                        <div className="notation-portrait--stars valign-wrapper">
+                                          <strong>Technique</strong>
+                                          <div>
+                                            <span>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                            </span>
+                                          </div>
+                                        </div>
+                                          {/* <strong>Fair-play</strong>
+                                            </strong>
+                                          <strong>Technique
+                                            <span>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              </span>
+                                          </strong>
+                                          <strong>Respect 
+                                            <span>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              </span>
+                                          </strong> */}
+                                        {/* </div> */}
                                       </div>
                                     </div>
                                   </div>

@@ -29,6 +29,8 @@ $secondary: #F5008B;
             border-radius: 4px;
             background: transparent;
                 transition: all 0.3s ease;
+                
+            -webkit-appearance: scrollbartrack-vertical;
         }
         ::-webkit-scrollbar:hover{
             background: #c6c7ca;
@@ -45,6 +47,15 @@ $secondary: #F5008B;
         bottom: 0;
         margin-bottom: 0;
         width:60%;
+
+        .chat-tools-feature{
+            margin-bottom: 0;
+            margin-top: 20px;
+        }
+        .chat-tools-chat{
+            margin-bottom:0;
+
+        }
         
         .chat-tools-feature--item{
             margin: 5px 5px 0 5px;
@@ -187,7 +198,7 @@ $secondary: #F5008B;
     .adversary-info{
         border-bottom: solid rgba(0,0,0,.2) 1px;
         padding: 20px;
-        .title{
+        .adversary-info--title{
             font-size: 2em;
         }
 
@@ -235,22 +246,27 @@ $secondary: #F5008B;
                 text-align: center;
             }
             .notation-portrait--stars{
-                margin-top: 10px;
-                /* default link color is blue */
-                i {
-                    color: rgba(0,0,0,.2);
+                margin-top: 0px;
+                & > *{
+                    display:inline-block;
+                }               
+                & > div{
+                    i {
+                        color: rgba(0,0,0,.2);
+                        cursor:pointer;
+                        font-size: 2em;
+                    }
+                    
+                    &:hover i{
+                        color: $secondary;
+                    }
+    
+                    i:hover ~ i {
+                        color: rgba(0,0,0,.2);
+                    }
                 }
-                
-                &:hover i{
-                    color: $secondary;
-                }
-
-                i:hover ~ i {
-                    color: rgba(0,0,0,.2);
-                }
-                i{
-                    cursor:pointer;
-                    font-size: 4em;
+                & > strong{
+                    width:30%;
                 }
             }
         }

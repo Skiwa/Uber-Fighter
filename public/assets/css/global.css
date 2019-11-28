@@ -62,7 +62,7 @@
 .badge-notification::after{
   margin: 0px 7px;
   content: '1';
-  background-color: #F44336;
+  background-color: #f5008b;
   padding: 0px 5px;
   border-radius: 50% 50%;
   color: white;

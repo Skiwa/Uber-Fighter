@@ -31,6 +31,7 @@
   border-radius: 4px;
   background: transparent;
   transition: all 0.3s ease;
+  -webkit-appearance: scrollbartrack-vertical;
 }
 
 .main .chat ::-webkit-scrollbar:hover {
@@ -49,6 +50,15 @@
   bottom: 0;
   margin-bottom: 0;
   width: 60%;
+}
+
+.main .chat-tools .chat-tools-feature {
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+.main .chat-tools .chat-tools-chat {
+  margin-bottom: 0;
 }
 
 .main .chat-tools .chat-tools-feature--item {
@@ -195,7 +205,7 @@
   padding: 20px;
 }
 
-.info-panel .adversary-info .title {
+.info-panel .adversary-info .adversary-info--title {
   font-size: 2em;
 }
 
@@ -252,25 +262,29 @@
 }
 
 .info-panel .fight-info .notation-portrait .notation-portrait--stars {
-  margin-top: 10px;
-  /* default link color is blue */
+  margin-top: 0px;
 }
 
-.info-panel .fight-info .notation-portrait .notation-portrait--stars i {
+.info-panel .fight-info .notation-portrait .notation-portrait--stars > * {
+  display: inline-block;
+}
+
+.info-panel .fight-info .notation-portrait .notation-portrait--stars > div i {
   color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-size: 2em;
 }
 
-.info-panel .fight-info .notation-portrait .notation-portrait--stars:hover i {
+.info-panel .fight-info .notation-portrait .notation-portrait--stars > div:hover i {
   color: #F5008B;
 }
 
-.info-panel .fight-info .notation-portrait .notation-portrait--stars i:hover ~ i {
+.info-panel .fight-info .notation-portrait .notation-portrait--stars > div i:hover ~ i {
   color: rgba(0, 0, 0, 0.2);
 }
 
-.info-panel .fight-info .notation-portrait .notation-portrait--stars i {
-  cursor: pointer;
-  font-size: 4em;
+.info-panel .fight-info .notation-portrait .notation-portrait--stars > strong {
+  width: 30%;
 }
 
 .input-field .postfix ~ input {

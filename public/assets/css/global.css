@@ -85,7 +85,7 @@
   border-radius: 5px;
   height: 10px;
   margin-top: calc(64px/2 - 5px);
-  padding-left: 6em;
+  padding-left: 7vw;
 }
 
 .nav-wrapper{
@@ -102,10 +102,10 @@
 }
 
 .silverImg{
-  width: 50px;
+  width: 3vw;
 }
 .goldImg{
-  width: 50px; margin-left: 21em;
+  width: 3vw; margin-left: 16vw;
 }
 
 .btn-floating.redCircle{
@@ -172,7 +172,7 @@
 @media (max-aspect-ratio: 16/9) {
     #videoBG { 
         width:auto;
-        height: 100%;
+        height: auto;
     }
 }
 @media (max-width: 767px) {

@@ -79,16 +79,16 @@ $(function() {
  
     })
  
-    $(".material-button").click(function() {
+    $(".material-button, .inscription").click(function() {
  
-       if ($(this).hasClass('material-button')) {
+       if ($('.material-button').hasClass('material-button')) {
           setTimeout(function() {
              $(".overbox").css({
                 "overflow": "hidden"
              })
              $(".box").addClass("back");
           }, 200)
-          $(this).addClass('active').animate({
+          $('.material-button').addClass('active').animate({
              "width": "700px",
              "height": "700px"
           });
@@ -105,7 +105,7 @@ $(function() {
              $(".overbox .button").fadeIn(300);
           }, 700)
  
-          $(this).removeClass('material-button');
+          $('.material-button').removeClass('material-button');
  
        }
  

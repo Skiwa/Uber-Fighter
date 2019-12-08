@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.7.1",
     "immutability-helper": "^3.0.1",
     "node-sass": "^4.13.0",
+    "nouislider": "^14.1.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-materialize": "^3.5.0",

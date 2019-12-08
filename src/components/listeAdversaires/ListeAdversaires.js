@@ -1,7 +1,6 @@
 import React from 'react';
 import PortraitAdversaire from '../portraitAdversaire/PortraitAdversaire';
-
-
+import PrettoSlider from './CustomizedSlider'
 
 class AdversaireEntité {
   constructor(photo, prenom, age, poids, taille, description, sports) {
@@ -39,22 +38,16 @@ class ListeAdversaires extends React.Component {
     <span className="">Combats</span>
   </div>
   <div className="col s6">
-    <select multiple onChange={(e)=>{e.persist();this.handleFilterChange(e)}}>
-        <option selected>
-          Tous
-        </option>
-        <option>
-          En cours
-        </option>
-        <option>
-          Terminés
-        </option>
-    </select>
+  
   </div>
 </div>
 <hr/>
-
-
+<form action="#">
+    <p className="range-field">
+      <input type="range" id="test5" min="0" max="100" />
+    </p>
+  </form>
+  <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" defaultValue={20} />
 </div>
 
 <div className="col fullHeight mainList">

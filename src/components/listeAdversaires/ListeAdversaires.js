@@ -1,6 +1,7 @@
 import React from 'react';
 import PortraitAdversaire from '../portraitAdversaire/PortraitAdversaire';
 import PrettoSlider from './CustomizedSlider'
+import './ListAdversaire.scss';
 
 class AdversaireEntité {
   constructor(photo, prenom, age, poids, taille, description, sports) {
@@ -35,19 +36,52 @@ class ListeAdversaires extends React.Component {
 
 <div className="row conversations--header valign-wrapper">
   <div className="col s6 ">
-    <span className="">Combats</span>
+    <span className="">Trier par</span>
   </div>
   <div className="col s6">
   
   </div>
 </div>
 <hr/>
-<form action="#">
-    <p className="range-field">
-      <input type="range" id="test5" min="0" max="100" />
-    </p>
-  </form>
+  <div>
   <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" defaultValue={20} />
+  <div className="notation-portrait--stars valign-wrapper">
+                                          <strong>Fair-play</strong>
+                                          <div>
+                                            <span>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                            </span>
+                                          </div>
+                                        </div>
+                                        <div className="notation-portrait--stars valign-wrapper">
+                                          <strong>Respect</strong>
+                                          <div>
+                                            <span>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                            </span>
+                                          </div>
+                                        </div>
+                                        <div className="notation-portrait--stars valign-wrapper">
+                                          <strong>Technique</strong>
+                                          <div>
+                                            <span>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                              <i className="material-icons">star</i>
+                                            </span>
+                                          </div>
+                                        </div>
+  </div>
 </div>
 
 <div className="col fullHeight mainList">

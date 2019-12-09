@@ -48,20 +48,93 @@ ValueLabelComponent.propTypes = {
 const iOSBoxShadow =
   '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.02)';
 
-const marks = [
-  {
-    value: 0,
-  },
-  {
-    value: 20,
-  },
-  {
-    value: 37,
-  },
-  {
-    value: 100,
-  },
-];
+  const marks = [
+    {
+      value: 50,
+      label: '50kg',
+    },
+    {
+      value: 100,
+      label: '100kg',
+    },
+    {
+      value: 150,
+      label: '150kg',
+    },
+    {
+      value: 200,
+      label: '200kg',
+    },
+  ];
+  const marksAge = [
+    {
+      value: 18,
+      label: '18ans+',
+    },
+    {
+      value: 30,
+      label: '30ans+',
+    },
+    {
+      value: 50,
+      label: '50ans+',
+    },
+    {
+      value: 70,
+      label: '70ans+',
+    },
+    {
+      value: 90,
+      label: '90ans+',
+    },
+  
+  ];
+
+  const marksLocalisation = [
+    {
+      value: 0,
+      label: '0km+',
+    },
+    {
+      value: 20,
+      label: '20km+',
+    },
+    {
+      value: 40,
+      label: '40km+',
+    },
+    {
+      value: 60,
+      label: '60km+',
+    },
+    {
+      value: 80,
+      label: '80km+',
+    },
+  ];
+  const marksTaille = [
+    {
+      value: 150,
+      label: '150cm+',
+    },
+    {
+      value: 170,
+      label: '170cm+',
+    },
+    {
+      value: 190,
+      label: '190cm+',
+    },
+    {
+      value: 210,
+      label: '210cm+',
+    },
+    {
+      value: 230,
+      label: '230cm+',
+    },
+  ];
+  
 
 const IOSSlider = withStyles({
   root: {
@@ -115,7 +188,7 @@ const IOSSlider = withStyles({
 
 const PrettoSlider = withStyles({
   root: {
-    color: '#52af77',
+    color: '#f5008b',
     height: 8,
   },
   thumb: {
@@ -192,31 +265,30 @@ function AirbnbThumbComponent(props) {
     </span>
   );
 }
-
+function valuetext(value) {
+  return `${value}Odsfksdfks`;
+}
+function valueLabelFormat(value) {
+  return marks.findIndex(mark => mark.value === value) + 1;
+}
 export default function CustomizedSlider() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <Typography gutterBottom>iOS</Typography>
-      <IOSSlider aria-label="ios slider" defaultValue={60} marks={marks} valueLabelDisplay="on" />
+
+      <Typography gutterBottom>Localisation à proximité</Typography>
+      <PrettoSlider valueLabelDisplay="auto"  min= {0} max={80} step={5} marks={marksLocalisation} aria-label="pretto slider" defaultValue={20} />
       <div className={classes.margin} />
-      <Typography gutterBottom>pretto.fr</Typography>
-      <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" defaultValue={20} />
+      <Typography gutterBottom>Taille en cm</Typography>
+      <PrettoSlider valueLabelDisplay="auto" min= {150} max={230} step={1} marks={marksTaille} aria-label="pretto slider" defaultValue={170} />
       <div className={classes.margin} />
-      <Typography gutterBottom>Tooltip value label</Typography>
-      <Slider
-        ValueLabelComponent={ValueLabelComponent}
-        aria-label="custom thumb label"
-        defaultValue={20}
-      />
+      <Typography gutterBottom>Poids</Typography>
+      <PrettoSlider valueLabelDisplay="auto" min= {50} max={200} step={10} marks={marks} aria-label="pretto slider" defaultValue={60} />
       <div className={classes.margin} />
-      <Typography gutterBottom>Airbnb</Typography>
-      <AirbnbSlider
-        ThumbComponent={AirbnbThumbComponent}
-        getAriaLabel={index => (index === 0 ? 'Minimum price' : 'Maximum price')}
-        defaultValue={[20, 40]}
-      />
+      <Typography gutterBottom>Age</Typography>
+      <PrettoSlider valueLabelDisplay="auto" min= {18} max={90} step={1} marks={marksAge} aria-label="pretto slider" defaultValue={20} />
+      <div className={classes.margin} />
     </div>
   );
 }

@@ -1,0 +1,36 @@
+$secondary: #F5008B;
+.notation-portrait{
+    img{
+        height: 20vh;
+        width:20vh;
+        margin:auto;
+    }
+    strong{
+        display:block;
+        text-align: center;
+    }
+    .notation-portrait--stars{
+        margin-top: 0px;
+        & > *{
+            display:inline-block;
+        }               
+        & > div{
+            i {
+                color: rgba(0,0,0,.2);
+                cursor:pointer;
+                font-size: 2em;
+            }
+            
+            &:hover i{
+                color: $secondary;
+            }
+
+            i:hover ~ i {
+                color: rgba(0,0,0,.2);
+            }
+        }
+        & > strong{
+            width:30%;
+        }
+    }
+}

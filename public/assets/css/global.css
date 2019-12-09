@@ -198,3 +198,7 @@
   .borderTable{
     border-collapse: unset;
   }
+  .makeStyles-root-7 {
+    margin-left: 1vw;
+    width: 17vw!important;
+}

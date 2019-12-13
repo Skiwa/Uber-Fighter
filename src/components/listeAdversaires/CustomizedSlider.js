@@ -69,23 +69,23 @@ const iOSBoxShadow =
   const marksAge = [
     {
       value: 18,
-      label: '18ans+',
+      label: '18+',
     },
     {
       value: 30,
-      label: '30ans+',
+      label: '30+',
     },
     {
       value: 50,
-      label: '50ans+',
+      label: '50+',
     },
     {
       value: 70,
-      label: '70ans+',
+      label: '70+',
     },
     {
       value: 90,
-      label: '90ans+',
+      label: '90+',
     },
   
   ];
@@ -108,30 +108,30 @@ const iOSBoxShadow =
       label: '60km+',
     },
     {
-      value: 80,
+      value: 79,
       label: '80km+',
     },
   ];
   const marksTaille = [
     {
       value: 150,
-      label: '150cm+',
+      label: '150cm',
     },
     {
       value: 170,
-      label: '170cm+',
+      label: '170cm',
     },
     {
       value: 190,
-      label: '190cm+',
+      label: '190cm',
     },
     {
       value: 210,
-      label: '210cm+',
+      label: '210cm',
     },
     {
       value: 230,
-      label: '230cm+',
+      label: '230cm',
     },
   ];
   

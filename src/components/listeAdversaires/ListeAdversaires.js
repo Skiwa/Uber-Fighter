@@ -34,10 +34,26 @@ class ListeAdversaires extends React.Component {
         <div className="row" style={{margin: 0}}>
        <div className="col z-depth-3 fullHeightList side-panel conversations">
 
-<div className="row conversations--header valign-wrapper">
+<div className="row conversations--header align-wrapper">
   <div className="col s6 ">
     <span className="">Trier par</span>
   </div>
+  <div className="col s6 right">
+                        <select>
+                            <option selected>
+                              Tous
+                            </option>
+                            <option>
+                              Fair-play
+                            </option>
+                            <option>
+                              Respect
+                            </option>
+                            <option>
+                              Technique
+                            </option>
+                        </select>
+                      </div>
   <div className="col s6">
   
   </div>
@@ -45,42 +61,7 @@ class ListeAdversaires extends React.Component {
 <hr/>
   <div>
   <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" defaultValue={20} />
-  <div className="notation-portrait--stars valign-wrapper">
-                                          <strong>Fair-play</strong>
-                                          <div>
-                                            <span>
-                                              <i className="material-icons">star</i>
-                                              <i className="material-icons">star</i>
-                                              <i className="material-icons">star</i>
-                                              <i className="material-icons">star</i>
-                                              <i className="material-icons">star</i>
-                                            </span>
-                                          </div>
-                                        </div>
-                                        <div className="notation-portrait--stars valign-wrapper">
-                                          <strong>Respect</strong>
-                                          <div>
-                                            <span>
-                                              <i className="material-icons">star</i>
-                                              <i className="material-icons">star</i>
-                                              <i className="material-icons">star</i>
-                                              <i className="material-icons">star</i>
-                                              <i className="material-icons">star</i>
-                                            </span>
-                                          </div>
-                                        </div>
-                                        <div className="notation-portrait--stars valign-wrapper">
-                                          <strong>Technique</strong>
-                                          <div>
-                                            <span>
-                                              <i className="material-icons">star</i>
-                                              <i className="material-icons">star</i>
-                                              <i className="material-icons">star</i>
-                                              <i className="material-icons">star</i>
-                                              <i className="material-icons">star</i>
-                                            </span>
-                                          </div>
-                                        </div>
+
   </div>
 </div>
 

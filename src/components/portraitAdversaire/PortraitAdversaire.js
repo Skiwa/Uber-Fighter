@@ -10,12 +10,8 @@ class PortraitAdversaire extends React.Component {
                 <img src={this.props.adversaire.photo} alt="" />
                 <div className="card-title col s12 rm-padding-bottom">
                   <div className="row">
-                    <div className="col s6">
-                      <span>
-                        1 <strong>2</strong> 3
-                      </span>
-                    </div>
-                    <div className="col s6 right-align">
+                
+                    <div className="col s6 right">
                       <div>
                         <span className="right">
                           <i className="material-icons yellow-text star-valign textShadow">

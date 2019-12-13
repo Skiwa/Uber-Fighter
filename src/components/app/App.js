@@ -8,47 +8,58 @@ import {
 import ListeAdversaires from "../listeAdversaires/ListeAdversaires";
 import Login from "../login/Login";
 import MesCombats from "../mesCombats/MesCombats";
+import Avatar from '@material-ui/core/Avatar';
+import Dropdown from "react-materialize/lib/Dropdown";
+
 
 export default function App() {
   return (
     <Router>
       <header>
-      <ul id="dropdown1" className="dropdown-content">
-        <li><a href="#!">one</a></li>
-        <li><a href="#!">two</a></li>
-        <li className="divider"></li>
-        <li><a href="#!">three</a></li>
-      </ul>
 
       <div className="navbar-fixed" >
+      
+      <ul id="dropdown1" class="dropdown-content">
+  <li><a href="#!">one</a></li>
+  <li><a href="#!">two</a></li>
+  <li class="divider"></li>
+  <li><a href="#!">three</a></li>
+</ul>
       <nav className=" row">
         <div className="nav-wrapper">
-          <div className="col s3">
+          <div className="col s12 m6 l3 left">
           <a href="#!" className="brand-logo">Uber <span className="logo-main"> Fighter</span></a>
         </div>
-          <div className="col s5 center offset-s1 colRank">
-          <b className="alignRank">Silver</b>
+          <div className="col s12 m6 l4 center">
+          <b className="alignRank" style={{fontSize: 1+'vw'}}>Silver</b>
 
             <img src="assets/img/silver.png" className="silverImg" alt=""/>
             
             <div className="brand-logo">
             
-            <div className="progress-bar">              </div>
+            <div className="progress-bar tooltipped" data-tooltip="Progression: 73/100" style={{fontSize: 2.3+'vw'}} >              </div>
               
           </div>
          
           <img src="assets/img/gold.png" className="goldImg" alt=""/>
-          <b className="alignRank">Gold</b>
-          
+          <b className="alignRank" style={{fontSize: 1+'vw'}}>Gold</b>
         </div>
-        <div className="col s3 center">
+        <div className="col s12 m6 l3">
           <ul className="hide-on-med-and-down">
-            <li className="active"><Link to="/liste" >Liste d'adversaire</Link></li>
-            <li><Link to="/mesCombats" className="badge-notification">Mes combats</Link></li>
-            <li><Link to="login">Accueil</Link></li>
+            <li className="active"><Link to="/liste" style={{fontSize: 0.8+'vw'}} >Liste d'adversaire</Link></li>
+            <li><Link to="/mesCombats" className="badge-notification" style={{fontSize: 0.8+'vw'}}>Mes combats</Link></li>
+            <li><Link to="login" style={{fontSize: .8+'vw'}}>Accueil</Link></li>
 {/*             <li><a className="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i className="material-icons right">arrow_drop_down</i></a></li>
  */}          </ul>
         </div>
+        <div className="col s12 m6 l2">
+          <ul className="hide-on-med-and-down">
+            <li style={{marginTop: 0.5+'vw'}}><Avatar alt="Benicio Del Toro" src="assets/img/benicio.jpg" /></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Benicio<i class="material-icons right">arrow_drop_down</i></a></li>
+{/*             <li><a className="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i className="material-icons right">arrow_drop_down</i></a></li>
+ */}          </ul>
+        </div>
+
         </div>
       </nav>
     </div>

@@ -62,30 +62,30 @@ const iOSBoxShadow =
       label: '150kg',
     },
     {
-      value: 200,
+      value: 199,
       label: '200kg',
     },
   ];
   const marksAge = [
     {
       value: 18,
-      label: '18+',
+      label: '18',
     },
     {
       value: 30,
-      label: '30+',
+      label: '30',
     },
     {
       value: 50,
-      label: '50+',
+      label: '50',
     },
     {
       value: 70,
-      label: '70+',
+      label: '70',
     },
     {
-      value: 90,
-      label: '90+',
+      value: 89,
+      label: '90',
     },
   
   ];
@@ -93,23 +93,23 @@ const iOSBoxShadow =
   const marksLocalisation = [
     {
       value: 0,
-      label: '0km+',
+      label: '0km',
     },
     {
       value: 20,
-      label: '20km+',
+      label: '20km',
     },
     {
       value: 40,
-      label: '40km+',
+      label: '40km',
     },
     {
       value: 60,
-      label: '60km+',
+      label: '60km',
     },
     {
       value: 79,
-      label: '80km+',
+      label: '80km',
     },
   ];
   const marksTaille = [
@@ -130,7 +130,7 @@ const iOSBoxShadow =
       label: '210cm',
     },
     {
-      value: 230,
+      value: 229,
       label: '230cm',
     },
   ];
@@ -280,13 +280,24 @@ export default function CustomizedSlider() {
       <Typography gutterBottom>Localisation à proximité</Typography>
       <PrettoSlider valueLabelDisplay="auto"  min= {0} max={80} step={5} marks={marksLocalisation} aria-label="pretto slider" defaultValue={20} />
       <div className={classes.margin} />
-      <Typography gutterBottom>Taille en cm</Typography>
+      <Typography gutterBottom>Taille max</Typography>
       <PrettoSlider valueLabelDisplay="auto" min= {150} max={230} step={1} marks={marksTaille} aria-label="pretto slider" defaultValue={170} />
       <div className={classes.margin} />
-      <Typography gutterBottom>Poids</Typography>
-      <PrettoSlider valueLabelDisplay="auto" min= {50} max={200} step={10} marks={marks} aria-label="pretto slider" defaultValue={60} />
+      <div>
+        
+      <Typography gutterBottom>Poids max</Typography>
+      <div className="row">
+      <div className="col s12 m4 l1">
+      <img src="assets/img/Skinny.png" className="miniIconFilterToLeft" alt="" /></div>
+      <div className="col s12 m4 l10">
+      <PrettoSlider valueLabelDisplay="auto" min= {50} max={200} step={10} marks={marks} aria-label="pretto slider" defaultValue={60} /></div>
+      <div className="col s12 m4 l1">
+      <img src="assets/img/Fat.png" className="miniIconFilterToRight" alt="" /></div>
+      </div>
+      
+      </div>
       <div className={classes.margin} />
-      <Typography gutterBottom>Age</Typography>
+      <Typography gutterBottom>Age max</Typography>
       <PrettoSlider valueLabelDisplay="auto" min= {18} max={90} step={1} marks={marksAge} aria-label="pretto slider" defaultValue={20} />
       <div className={classes.margin} />
     </div>

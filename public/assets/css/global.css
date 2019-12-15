@@ -218,4 +218,16 @@
   top: 64px !important;
   right: 0px !important;
   width: 156px !important;
+  height: auto !important;
+  width: 179px !important;
+}
+
+.dropdown1--link{
+  color: #07aa91 !important;
+}
+
+
+.dropdown1--link__deconnexion{
+  color: white !important;
+  background-color: #07aa91 !important;
 }

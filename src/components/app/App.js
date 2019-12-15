@@ -20,9 +20,9 @@ export default function App() {
       <div className="navbar-fixed" >
       
       <ul id="dropdown1" class="dropdown-content">
-      <li><a href="#!">Mon profil</a></li>
+      <li><a href="#!" class="dropdown1--link">Mon profil</a></li>
       <li class="divider"></li>
-      <li><a href="#!"><i class="material-icons right">lock_open</i>Déconnexion</a></li>
+      <li><a href="#!" class="dropdown1--link__deconnexion"><i class="material-icons right">lock_open</i>Déconnexion</a></li>
 </ul>
       <nav className=" row">
         <div className="nav-wrapper">

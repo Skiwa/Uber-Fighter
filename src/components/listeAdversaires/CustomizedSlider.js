@@ -283,8 +283,19 @@ export default function CustomizedSlider() {
       <Typography gutterBottom>Taille max</Typography>
       <PrettoSlider valueLabelDisplay="auto" min= {150} max={230} step={1} marks={marksTaille} aria-label="pretto slider" defaultValue={170} />
       <div className={classes.margin} />
+      <div>
+        
       <Typography gutterBottom>Poids max</Typography>
-      <PrettoSlider valueLabelDisplay="auto" min= {50} max={200} step={10} marks={marks} aria-label="pretto slider" defaultValue={60} />
+      <div className="row">
+      <div className="col s12 m4 l1">
+      <img src="assets/img/Skinny.png" className="miniIconFilterToLeft" alt="" /></div>
+      <div className="col s12 m4 l10">
+      <PrettoSlider valueLabelDisplay="auto" min= {50} max={200} step={10} marks={marks} aria-label="pretto slider" defaultValue={60} /></div>
+      <div className="col s12 m4 l1">
+      <img src="assets/img/Fat.png" className="miniIconFilterToRight" alt="" /></div>
+      </div>
+      
+      </div>
       <div className={classes.margin} />
       <Typography gutterBottom>Age max</Typography>
       <PrettoSlider valueLabelDisplay="auto" min= {18} max={90} step={1} marks={marksAge} aria-label="pretto slider" defaultValue={20} />

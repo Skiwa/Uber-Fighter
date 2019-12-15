@@ -60,6 +60,7 @@ class ListeAdversaires extends React.Component {
 </div>
 <hr/>
   <div>
+    
   <PrettoSlider valueLabelDisplay="auto" aria-label="pretto slider" defaultValue={20} />
 
   </div>

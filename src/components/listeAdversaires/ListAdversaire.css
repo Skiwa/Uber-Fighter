@@ -1,0 +1,36 @@
+.notation-portrait img {
+  height: 20vh;
+  width: 20vh;
+  margin: auto;
+}
+
+.notation-portrait strong {
+  display: block;
+  text-align: center;
+}
+
+.notation-portrait .notation-portrait--stars {
+  margin-top: 0px;
+}
+
+.notation-portrait .notation-portrait--stars > * {
+  display: inline-block;
+}
+
+.notation-portrait .notation-portrait--stars > div i {
+  color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-size: 2em;
+}
+
+.notation-portrait .notation-portrait--stars > div:hover i {
+  color: #ED2553;
+}
+
+.notation-portrait .notation-portrait--stars > div i:hover ~ i {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.notation-portrait .notation-portrait--stars > strong {
+  width: 30%;
+}

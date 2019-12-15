@@ -69,7 +69,7 @@ class ListeAdversaires extends React.Component {
 <div className="col fullHeight mainList">
         
       <h2 className="center-align">Choisir un adversaire</h2>
-        <p className="center-align">Cliquez sur <p className=" btn-floating red btn-large btn-large-redCircle">
+        <p className="center-align">Cliquez sur <p className=" btn-floating btn-large btn-large-redCircle btn-miniProvoc">
        
             <img src="assets/img/provoc.svg" className="miniProvocImg" alt="" />
           </p> pour <b>provoquer</b> un adversaire</p>

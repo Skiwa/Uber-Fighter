@@ -2,9 +2,6 @@ import React from 'react';
 import './login.css'
 import './loginForm.css'
 import {
-   BrowserRouter as Router,
-   Switch,
-   Route,
    Link
  } from "react-router-dom";
 class Login extends React.Component {
@@ -42,13 +39,13 @@ class Login extends React.Component {
         <h4  className="header">Un autre manière de se trouver des poings communs!</h4>
 
         <div className="row center">
-    <div className="col s12 m6 l2"><img src="assets/img/seek.png" style={{width: 8+'vw', marginTop: 2+'vw'}}></img></div>
-    <div className="col s12 m6 l1"><img src="assets/img/tuto/arrow.png" style={{width: 3+'vw', marginTop: 6+'vw'}}></img></div>
-    <div className="col s12 m6 l3"><img src="assets/img/listOfThreeChar.png" style={{width: 15+'vw', marginTop: 4+'vw'}}></img></div>
-    <div className="col s12 m6 l1"><img src="assets/img/tuto/arrow.png" style={{width: 3+'vw', marginTop: 6+'vw'}}></img></div>
-    <div className="col s12 m6 l2"><img src="assets/video/fighting.gif" style={{width: 8+'vw', marginTop: 2+'vw'}}></img></div>
-    <div className="col s12 m6 l1"><img src="assets/img/tuto/arrow.png" style={{width: 3+'vw', marginTop: 6+'vw'}}></img></div>
-    <div className="col s12 m6 l2"><img src="assets/img/pnjRate.png" style={{width: 8+'vw'}}></img></div>
+    <div className="col s12 m6 l2"><img src="assets/img/seek.png" style={{width: 8+'vw', marginTop: 2+'vw'}}alt=""></img></div>
+    <div className="col s12 m6 l1"><img src="assets/img/tuto/arrow.png" style={{width: 3+'vw', marginTop: 6+'vw'}}alt=""></img></div>
+    <div className="col s12 m6 l3"><img src="assets/img/listOfThreeChar.png" style={{width: 15+'vw', marginTop: 4+'vw'}}alt=""></img></div>
+    <div className="col s12 m6 l1"><img src="assets/img/tuto/arrow.png" style={{width: 3+'vw', marginTop: 6+'vw'}}alt=""></img></div>
+    <div className="col s12 m6 l2"><img src="assets/video/fighting.gif" style={{width: 8+'vw', marginTop: 2+'vw'}}alt=""></img></div>
+    <div className="col s12 m6 l1"><img src="assets/img/tuto/arrow.png" style={{width: 3+'vw', marginTop: 6+'vw'}}alt=""></img></div>
+    <div className="col s12 m6 l2"><img src="assets/img/pnjRate.png" style={{width: 8+'vw'}}alt=""></img></div>
   </div>
   <div className="row center">
     <div className="col s12 m6 l2"><span className='tutoFontSize'><b>Cherchez</b></span></div>
@@ -71,7 +68,7 @@ class Login extends React.Component {
 </div>
 <div className="parallax-container">
 <div  className="overlay">
-      <div id="combat" className="parallax"><img src="assets/img/rank6.jpg"></img></div>
+      <div id="combat" className="parallax"><img src="assets/img/rank6.jpg"alt=""></img></div>
       <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
       <p className="logo-main center" style={{fontSize: 7+'vw'}}> Combats</p>
       </div>
@@ -88,11 +85,11 @@ class Login extends React.Component {
          <h5><p className="grey-text text-darken-3 lighten-3" style={{textAlign: 'initial'}}>Le principe:</p></h5>    
 
            <div className="row center">
-    <div className="col s12 m6 l4"><img src="assets/img/tuto/card.png" style={{width: 20+'vw'}}></img></div>
-    <div className="col s12 m6 l1"><img src="assets/img/tuto/arrow.png" style={{width: 5+'vw', marginTop: 6+'vw'}}></img></div>
-    <div className="col s12 m6 l3"><img src="assets/img/tuto/mesCombats.png" style={{width: 15+'vw', marginTop: 6+'vw'}}></img></div>
-    <div className="col s12 m6 l1"><img src="assets/img/tuto/arrow.png" style={{width: 5+'vw',  marginTop: 6+'vw'}}></img></div>
-    <div className="col s12 m6 l3"><img src="assets/img/tuto/lieu.png" style={{width: 20+'vw',  marginTop: -1+'vw'}}></img></div>
+    <div className="col s12 m6 l4"><img src="assets/img/tuto/card.png" style={{width: 20+'vw'}}alt=""></img></div>
+    <div className="col s12 m6 l1"><img src="assets/img/tuto/arrow.png" style={{width: 5+'vw', marginTop: 6+'vw'}}alt=""></img></div>
+    <div className="col s12 m6 l3"><img src="assets/img/tuto/mesCombats.png" style={{width: 15+'vw', marginTop: 6+'vw'}}alt=""></img></div>
+    <div className="col s12 m6 l1"><img src="assets/img/tuto/arrow.png" style={{width: 5+'vw',  marginTop: 6+'vw'}}alt=""></img></div>
+    <div className="col s12 m6 l3"><img src="assets/img/tuto/lieu.png" style={{width: 20+'vw',  marginTop: -1+'vw'}}alt=""></img></div>
   </div>
   <div className="row center">
     <div className="col s12 m6 l4"><span className='tutoFontSize'><b>Provoquez un adversaire en cliquant sur le poing</b></span></div>
@@ -108,7 +105,7 @@ class Login extends React.Component {
 </div>
 <div className="parallax-container">
 <div  className="overlay">
-      <div id="grade" className="parallax"><img src="assets/img/rank4.jpg"></img></div>
+      <div id="grade" className="parallax"><img src="assets/img/rank4.jpg"alt=""></img></div>
       <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
       <p className="logo-main center" style={{fontSize: 7+'vw'}}> Grades</p>
       </div>
@@ -134,18 +131,18 @@ class Login extends React.Component {
     <div className="col s12 m6 l2"><p className="tutoFontSize">Platinium</p></div>
   </div>
   <div className="row">
-    <div className="col s12 m6 l2"><img src="assets/img/rank/iron.png" className='rankSize tooltipped' data-tooltip="Iron"></img></div>
-    <div className="col s12 m6 l2"><img src="assets/img/rank/bronze.png" className='rankSize tooltipped' data-tooltip="Bronze"></img></div>
-    <div className="col s12 m6 l2"><img src="assets/img/rank/silver.png" className='rankSize tooltipped' data-tooltip="Silver"></img></div>
-    <div className="col s12 m6 l2"><img src="assets/img/rank/gold.png" className='rankSize tooltipped' data-tooltip="Gold"></img></div>
-    <div className="col s12 m6 l2"><img src="assets/img/rank/platinium.png" className='rankSize tooltipped' data-tooltip="Platinium"></img></div>
+    <div className="col s12 m6 l2"><img src="assets/img/rank/iron.png" className='rankSize' data-tooltip="Iron"alt=""></img></div>
+    <div className="col s12 m6 l2"><img src="assets/img/rank/bronze.png" className='rankSize' data-tooltip="Bronze"alt=""></img></div>
+    <div className="col s12 m6 l2"><img src="assets/img/rank/silver.png" className='rankSize' data-tooltip="Silver"alt=""></img></div>
+    <div className="col s12 m6 l2"><img src="assets/img/rank/gold.png" className='rankSize' data-tooltip="Gold"alt=""></img></div>
+    <div className="col s12 m6 l2"><img src="assets/img/rank/platinium.png" className='rankSize' data-tooltip="Platinium"alt=""></img></div>
   </div>
 
   <div className="row">
-    <div className="col s12 m6 l2"><img src="assets/img/rank/diamond.png" className='rankSize tooltipped' data-tooltip="Diamond"></img></div>
-    <div className="col s12 m6 l2"><img src="assets/img/rank/master.png" className='rankSize tooltipped' data-tooltip="Master"></img></div>
-    <div className="col s12 m6 l2"><img src="assets/img/rank/grandmaster.png" className='rankSize tooltipped' data-tooltip="Grandmaster"></img></div>
-    <div className="col s12 m6 l2"><img src="assets/img/rank/Challenger.png" className='rankSize tooltipped' data-tooltip="Challenger"></img></div>
+    <div className="col s12 m6 l2"><img src="assets/img/rank/diamond.png" className='rankSize' data-tooltip="Diamond"alt=""></img></div>
+    <div className="col s12 m6 l2"><img src="assets/img/rank/master.png" className='rankSize' data-tooltip="Master"alt=""></img></div>
+    <div className="col s12 m6 l2"><img src="assets/img/rank/grandmaster.png" className='rankSize' data-tooltip="Grandmaster"alt=""></img></div>
+    <div className="col s12 m6 l2"><img src="assets/img/rank/Challenger.png" className='rankSize' data-tooltip="Challenger"alt=""></img></div>
   </div>
 
   <div className="row">
@@ -158,7 +155,7 @@ class Login extends React.Component {
         <br></br><br></br>
         <h5><p className="grey-text text-darken-3 lighten-3" style={{textAlign: 'initial'}}>Une barre d'expérience en haut au millieu du menu vous indique le cours de votre progression.</p></h5>
         <br></br>
-<div style={{width:300+'px'}}>
+<div style={{width:300+'px', margin:'auto'}}>
         
 
 
@@ -168,9 +165,9 @@ class Login extends React.Component {
       <tbody>
   <tr>
 <th><img src="assets/img/silver.png" className="silverImg" alt=""/>
-<b className="alignRank tooltipped" data-tooltip="Silver">Silver</b></th>
-<th><div className="progress-bar tooltipped" data-tooltip="Barre de progression" style={{display: 'inline-block'}}>              </div></th>
-<th><img src="assets/img/gold.png" className="silverImg tooltipped" data-tooltip="Gold" alt=""/>
+<b className="alignRank" data-tooltip="Silver">Silver</b></th>
+<th><div className="progress-bar" data-tooltip="Barre de progression" style={{display: 'inline-block'}}>              </div></th>
+<th><img src="assets/img/gold.png" className="silverImg" alt=""/>
 <b className="alignRank">Gold</b></th>
 </tr>
 </tbody>
@@ -210,7 +207,7 @@ class Login extends React.Component {
          
       </div>
       <a href="#inscription" className="pass-forgot inscription">S'inscrire?</a>
-      <a href="" className="pass-forgot">Mot de passe oublié?</a>
+      <a className="pass-forgot">Mot de passe oublié?</a>
 
    </div>
 

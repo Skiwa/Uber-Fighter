@@ -9,7 +9,6 @@ import ListeAdversaires from "../listeAdversaires/ListeAdversaires";
 import Login from "../login/Login";
 import MesCombats from "../mesCombats/MesCombats";
 import Avatar from '@material-ui/core/Avatar';
-import Dropdown from "react-materialize/lib/Dropdown";
 
 
 export default function App() {
@@ -19,16 +18,21 @@ export default function App() {
 
       <div className="navbar-fixed" >
       
-      <ul id="dropdown1" class="dropdown-content">
-      <li><a href="#!" class="dropdown1--link">Mon profil</a></li>
-      <li class="divider"></li>
-      <li><a href="#!" class="dropdown1--link__deconnexion"><i class="material-icons right">lock_open</i>Déconnexion</a></li>
+      <ul id="dropdown1" className="dropdown-content">
+      <li><a href="#!" className="dropdown1--link">Mon profil</a></li>
+      <li className="divider"></li>
+      <li><a href="#!" className="dropdown1--link__deconnexion"><i className="material-icons right">lock_open</i>Déconnexion</a></li>
 </ul>
       <nav className=" row">
         <div className="nav-wrapper">
           <div className="col s12 m6 l4 left">
-          <a href="#!" className="brand-logo">Uber <span className="logo-main"> Fighter</span></a>
+          <Link to="/" className="brand-logo">Uber <span className="logo-main"> Fighter</span></Link>
         </div>
+
+        {window.location.pathname !== "/" && 
+        
+        
+        <React.Fragment>
           <div className="col s12 m6 l4 center">
           <b className="alignRank" style={{fontSize: 1+'vw'}}>Silver</b>
 
@@ -48,11 +52,12 @@ export default function App() {
             <li className="active"><Link to="/liste" style={{fontSize: 0.8+'vw'}} >Liste d'adversaire</Link></li>
             <li><Link to="/mesCombats" className="badge-notification" style={{fontSize: 0.8+'vw'}}>Mes combats</Link></li>
             <li style={{marginTop: 0.5+'vw'}}><Avatar alt="Benicio Del Toro" src="assets/img/benicio.jpg" /></li>
-            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Benicio<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a className="dropdown-trigger" href="#!" data-target="dropdown1">Benicio<i className="material-icons right">arrow_drop_down</i></a></li>
         </ul>
         </div>
 
-
+        </React.Fragment>
+          }
         </div>
       </nav>
     </div>
@@ -63,14 +68,14 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/liste">
-            <ListeAdversaires/>
-          </Route>
-          <Route path="/login">
-            <Login/>
-          </Route>
           <Route path="/mesCombats">
-            <MesCombats/>
+            <MesCombats key={1}/>
+          </Route>
+          <Route path="/liste">
+            <ListeAdversaires key={2}/>
+          </Route>
+          <Route path="/">
+            <Login key={3}/>
           </Route>
         </Switch>
       </div>

@@ -14,6 +14,11 @@
   width: 76px;
   bottom: -18px !important;
   right: -18px !important;
+  background-color: #ED2553 !important;
+}
+
+.btn-miniProvoc{ 
+  background-color: #ED2553;
 }
 
 .btn-floating.btn-provoc i {
@@ -223,11 +228,11 @@
 }
 
 .dropdown1--link{
-  color: #07aa91 !important;
+  color: #ED2553 !important;
 }
 
 
 .dropdown1--link__deconnexion{
   color: white !important;
-  background-color: #07aa91 !important;
+  background-color: #ED2553 !important;
 }

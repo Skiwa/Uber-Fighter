@@ -20,10 +20,9 @@ export default function App() {
       <div className="navbar-fixed" >
       
       <ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">three</a></li>
+      <li><a href="#!">Mon profil</a></li>
+      <li class="divider"></li>
+      <li><a href="#!"><i class="material-icons right">lock_open</i>Déconnexion</a></li>
 </ul>
       <nav className=" row">
         <div className="nav-wrapper">
@@ -50,8 +49,7 @@ export default function App() {
             <li><Link to="/mesCombats" className="badge-notification" style={{fontSize: 0.8+'vw'}}>Mes combats</Link></li>
             <li style={{marginTop: 0.5+'vw'}}><Avatar alt="Benicio Del Toro" src="assets/img/benicio.jpg" /></li>
             <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Benicio<i class="material-icons right">arrow_drop_down</i></a></li>
-{/*             <li><a className="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i className="material-icons right">arrow_drop_down</i></a></li>
- */}          </ul>
+        </ul>
         </div>
 
 

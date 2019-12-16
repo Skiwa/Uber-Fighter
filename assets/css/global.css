@@ -1,0 +1,238 @@
+@font-face {
+  font-family: "Street Fighter";
+  src: url("../fonts/streetfighter.ttf") format("truetype")
+}
+
+
+.inline-icon {
+  vertical-align: bottom;
+  font-size: 18px !important;
+}
+
+.btn-floating.btn-provoc {
+  height: 76px;
+  width: 76px;
+  bottom: -18px !important;
+  right: -18px !important;
+  background-color: #ED2553 !important;
+}
+
+.btn-miniProvoc{ 
+  background-color: #ED2553;
+}
+
+.btn-floating.btn-provoc i {
+  line-height: 76px;
+  font-size: 2.6em;
+}
+.btn-floating.btn-provoc img {
+  height: 45px;
+  margin-top: 16px;
+  margin-right: 2px;
+  transition: all 0.25s;
+}
+
+.btn-floating.btn-provoc:hover img {
+  transform: scale(1.2);
+  transform-origin: 50% 50%;
+}
+
+.mouse-pointer {
+  cursor: pointer;
+}
+
+.z-index-max {
+  z-index: 99;
+}
+.z-index-medium {
+  z-index: 50;
+}
+.z-index-min {
+  z-index: 1;
+}
+
+.sports-reveal {
+  margin-top: 15px;
+}
+
+.star-valign {
+  vertical-align: -3px;
+}
+
+.rm-padding-bottom {
+  padding-bottom: 0 !important;
+}
+
+
+.badge-notification::after{
+  margin: 0px 7px;
+  content: '1';
+  background-color: #f5008b;
+  padding: 0px 5px;
+  border-radius: 50% 50%;
+  color: white;
+}
+
+
+.logo-main{
+  font-family: "Street Fighter";
+  font-size: .8em;
+  margin-left: 5px;
+  color: #f5008b;
+}
+.uberLogo{
+  color: #ffffff;
+}
+
+.progress-bar {
+  background: linear-gradient(to right, #f5008b 3em, #ff0090 10px, #07aa91);
+  color: rgba(0,0,0,0);
+  border-radius: 5px;
+  height: 10px;
+  margin-top: calc(64px/2 - 5px);
+  padding-left: 7vw;
+}
+
+.nav-wrapper{
+  /* background-color:  #400807CC !important; */
+  background-color:  #000000 !important;
+}
+.sidenav{
+  top: 65px;
+}
+.img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.silverImg{
+  width: 3vw;
+}
+.goldImg{
+  width: 3vw; margin-left: 16vw;
+}
+
+.btn-floating.redCircle{
+  bottom: inherit !important; 
+  right: inherit !important; 
+  height: 3em; width: 3em !important;
+}
+
+.btn-floating.btn-large-redCircle{
+  bottom: inherit !important; 
+  right: inherit !important; 
+  height: 2em; width: 2em !important;
+}
+
+.btn-floating.btn-redCircle i {
+  line-height: 76px;
+  font-size: 2.6em;
+}
+
+.btn-floating.btn-redCircle img {
+  height: 29px;
+  margin-top: 8px;
+  margin-right: 2px;
+  transition: all 0.25s;
+}
+
+.btn-floating.btn-redCircle:hover img {
+  transform: scale(1.2);
+  transform-origin: 50% 50%;
+}
+.miniProvocImg{
+  height: 21px; margin-bottom: 7px;
+}
+.miniIconFilterToLeft{
+  height: 7vh;
+  margin-top: -2vh;
+  margin-left: -4vh;
+}
+.miniIconFilterToRight{
+  height: 7vh;
+  margin-top: -2vh;
+  margin-left: -2vh;
+}
+
+.alignRank{
+  vertical-align:top;
+}
+
+.colRank{
+  margin-left: 5.33333333% !important;
+}
+
+.mainList{
+  padding-left: 4vw !important;
+  width: 75% !important;
+}
+.fullHeightList{
+  height: calc(100vh - -182px)
+}
+
+.textShadow{
+  text-shadow: 2px 2px 4px #000000;
+}
+#videoBG {
+  position: absolute;
+    z-index: -1;
+}
+@media (min-aspect-ratio: 16/9) {
+    #videoBG {
+        width:100%;
+        height: auto;
+    }
+}
+@media (max-aspect-ratio: 16/9) {
+    #videoBG { 
+        width:auto;
+        height: auto;
+    }
+}
+@media (max-width: 767px) {
+    #videoBG {
+        display: none;
+    }
+    body {
+        background: url('poster.jpg');
+        background-size: cover;
+    }
+  }
+  .overlay {
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+  .borderTable{
+    border-collapse: unset;
+  }
+  .makeStyles-root-7 {
+    margin-left: 2vw;
+    width: 16vw!important;
+}
+
+
+#dropdown1{
+  top: 64px !important;
+  right: 0px !important;
+  width: 156px !important;
+  height: auto !important;
+  width: 179px !important;
+}
+
+.dropdown1--link{
+  color: #ED2553 !important;
+}
+
+
+.dropdown1--link__deconnexion{
+  color: white !important;
+  background-color: #ED2553 !important;
+}

@@ -39,7 +39,7 @@ class PortraitAdversaire extends React.Component {
                 {this.props.adversaire.sports.map((sport, index) => {
                   return <div className="chip" key={index}>{sport}</div>
                 })}
-                <a className="btn-floating halfway-fab waves-effect waves-light red btn-large btn-provoc">
+                <a className="btn-floating halfway-fab waves-effect waves-light red btn-large btn-provoc" href="{null}" style={{pointerEvents:'none'}}>
                   <img src="assets/img/provoc.svg" alt="" />
                 </a>
               </div>

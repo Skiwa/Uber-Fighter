@@ -40,7 +40,7 @@ class ListeAdversaires extends React.Component {
   </div>
   <div className="col s6 right">
                         <select>
-                            <option selected>
+                            <option defaultValue>
                               Tous
                             </option>
                             <option>
@@ -69,10 +69,10 @@ class ListeAdversaires extends React.Component {
 <div className="col fullHeight mainList">
         
       <h2 className="center-align">Choisir un adversaire</h2>
-        <p className="center-align">Cliquez sur <p className=" btn-floating btn-large btn-large-redCircle btn-miniProvoc">
+        <p className="center-align">Cliquez sur <span className=" btn-floating btn-large btn-large-redCircle btn-miniProvoc">
        
             <img src="assets/img/provoc.svg" className="miniProvocImg" alt="" />
-          </p> pour <b>provoquer</b> un adversaire</p>
+          </span> pour <b>provoquer</b> un adversaire</p>
         <div className="divider"></div>
         <p><b>23 adversaires disponibles</b></p>
         <br/>

@@ -159,8 +159,8 @@ class MesCombats extends React.Component {
                         <span className="">Combats</span>
                       </div>
                       <div className="col s6">
-                        <select multiple onChange={(e)=>{e.persist();this.handleFilterChange(e)}}>
-                            <option selected>
+                        <select multiple onChange={(e)=>{e.persist();this.handleFilterChange(e)}} value={["Tous"]}>
+                            <option defaultValue>
                               Tous
                             </option>
                             <option>
@@ -195,8 +195,7 @@ class MesCombats extends React.Component {
                                 </div>
                               </div>
                             );
-                          }
-                          
+                          }else{return null;}
                         }
                       )}
                     </div>
@@ -237,15 +236,15 @@ class MesCombats extends React.Component {
                       </div>
                       {/* Outils de chat */}
                       <div className="row chat-tools">
-                        <div className="col s2 right-align chat-tools-feature" style={{'margin':'22.5px 0'},{'marginBottom':'0'}}>
+                        <div className="col s2 right-align chat-tools-feature" style={{margin:'22.5px 0',marginBottom:'0'}}>
                           <i className="material-icons chat-tools-feature--item pinkCustom-text tooltipped" data-tooltip="GIF" data-position="top">movie_filter</i>
                           <i className="material-icons chat-tools-feature--item pinkCustom-text tooltipped" data-tooltip="Image" data-position="top">photo</i>
                           <i className="material-icons chat-tools-feature--item pinkCustom-text tooltipped" data-tooltip="Message vocal" data-position="top">keyboard_voice</i>
                         </div>
                         <div className="input-field col s10 valign-wrapper chat-tools-chat">
-                          <i class="postfix material-icons pinkCustom-text tooltipped" data-tooltip="Envoyer" data-position="top"  onClick={(e)=>{e.persist();this.sendMessage(e.target.parentElement.children[1].value)}}>send</i>
+                          <i className="postfix material-icons pinkCustom-text tooltipped" data-tooltip="Envoyer" data-position="top"  onClick={(e)=>{e.persist();this.sendMessage(e.target.parentElement.children[1].value)}}>send</i>
                           <input id="message" type="text" onKeyUp={(e)=>{e.persist();this.handleKeyUpSendMessage(e)}}/>
-                          <label for="message">Envoyer un message à {this.state.conversations[this.state.currentConversation].adversary.name}</label>
+                          <label htmlFor="message">Envoyer un message à {this.state.conversations[this.state.currentConversation].adversary.name}</label>
                         </div>
                       </div>
                   </div>
@@ -300,21 +299,21 @@ class MesCombats extends React.Component {
                             <div className="row" style={{'marginBottom': '5px'}}>
                               <div className="input-field col s6">
                                 <DatePicker options={{'minDate':new Date()}} id="propositon_date"/>
-                                <label for="propositon_time">Date</label>
+                                <label htmlFor="propositon_time">Date</label>
                               </div>
                               <div className="input-field col s6">
                                 <TimePicker options={{'fromNow':1}} id="propositon_time"/>
-                                <label for="propositon_time">Heure</label>
+                                <label htmlFor="propositon_time">Heure</label>
                               </div>
                               <div className="input-field col s12">
-                                <textarea id="propositon_location" class="materialize-textarea"></textarea>
-                                <label for="propositon_location">Lieu</label>
+                                <textarea id="propositon_location" className="materialize-textarea"></textarea>
+                                <label htmlFor="propositon_location">Lieu</label>
                               </div>
 
                             </div>
                             <div className="row">
                               <div className="col s12 center-align">
-                                <a className="waves-effect waves-light btn btn-large pinkCustom" href='# ' onClick={()=>{this.changeConversationStatus(this.STATUS_PROPOSITION_SENT)}}><i class="material-icons right">send</i>Envoyer</a>
+                                <a className="waves-effect waves-light btn btn-large pinkCustom" href='# ' onClick={()=>{this.changeConversationStatus(this.STATUS_PROPOSITION_SENT)}}><i className="material-icons right">send</i>Envoyer</a>
                               </div>
                             </div>
                           </React.Fragment>
@@ -406,7 +405,7 @@ class MesCombats extends React.Component {
                               <br/><br/><br/>
                               <div className="col s12 center-align" >
                                 <div className="row">
-                                  <span className="pinkCustom-text" style={{'fontWeight':'500'},{'fontSize':'1.5em'}}>Vainqueur :</span>
+                                  <span className="pinkCustom-text" style={{fontWeight:'500',fontSize:'1.5em'}}>Vainqueur :</span>
                                   <br/> <br/>
                                   <div className="col s12 center-align">
                                     <div className="row">

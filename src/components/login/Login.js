@@ -36,7 +36,7 @@ class Login extends React.Component {
 <div  id="presentation" className="section white">
       <div className="row container center">
         
-        <h4  className="header">Un autre manière de se trouver des poings communs!</h4>
+        <h4  className="header">Une autre manière de se trouver des poings communs!</h4>
 
         <div className="row center">
     <div className="col s12 m6 l2"><img src="assets/img/seek.png" style={{width: 8+'vw', marginTop: 2+'vw'}}alt=""></img></div>
@@ -58,11 +58,11 @@ class Login extends React.Component {
   </div>
         <br></br>
         <h3 className="header">Uber Fighter c'est quoi?</h3>
-        <h5><p className="grey-text text-darken-3 lighten-3" style={{textAlign: 'initial'}}>Uber Fighter une plateforme de rencontre permettant aux utilisateurs de se défié entre eux.
+        <h5><p className="grey-text text-darken-3 lighten-3" style={{textAlign: 'initial'}}>Uber Fighter une plateforme de rencontre permettant aux utilisateurs de se défier entre eux.
         <br></br><br></br>
          Simple et efficace, Uber Fighter vous apporte l'assurance 
-        de trouver un adversaire à votre hauteur, grâce au système de grade.<br></br><br></br>
-        Décompressant, stimulant et surtout gratuit, Uber Fighter est la solution pour vivre des experiences unique tout en améliorant sa condition physique ! </p></h5>
+        de trouver un adversaire à votre hauteur grâce au système de grade.<br></br><br></br>
+        Décompressant, stimulant et surtout gratuit, c'est la solution pour vivre des experiences unique tout en améliorant sa condition physique ! </p></h5>
        
       </div>
 </div>
@@ -76,27 +76,23 @@ class Login extends React.Component {
     </div> 
     <div className="section white">
       <div className="row container center">
-      <h3 className="header">Les combats?</h3>
+      <br/>
       <h5><p className="grey-text text-darken-3 lighten-3" style={{textAlign: 'initial'}}>Uber Fighter vous apporte la possibilité de provoquer des adversaires de manière simple et rapide.
         <br></br><br></br>
-        A la manière de Tinder pour que deux individus puissent se battre, il faudra que ces derniers se soit mutuellement provoquer.<br></br><br></br>
-        Dans le cas ou seulement 1 personne à provoquer l'autre, alors le provocateur sera contraint de patienter. Jusqu'à que la personne provoquée, provoque son adversaire.
+        A la manière d'applications de rencontre, deux combattants s'affrontent après un accord mutuel.<br></br><br></br>
          </p></h5>
-         <h5><p className="grey-text text-darken-3 lighten-3" style={{textAlign: 'initial'}}>Le principe:</p></h5>    
 
-           <div className="row center">
-    <div className="col s12 m6 l4"><img src="assets/img/tuto/card.png" style={{width: 20+'vw'}}alt=""></img></div>
-    <div className="col s12 m6 l1"><img src="assets/img/tuto/arrow.png" style={{width: 5+'vw', marginTop: 6+'vw'}}alt=""></img></div>
-    <div className="col s12 m6 l3"><img src="assets/img/tuto/mesCombats.png" style={{width: 15+'vw', marginTop: 6+'vw'}}alt=""></img></div>
-    <div className="col s12 m6 l1"><img src="assets/img/tuto/arrow.png" style={{width: 5+'vw',  marginTop: 6+'vw'}}alt=""></img></div>
-    <div className="col s12 m6 l3"><img src="assets/img/tuto/lieu.png" style={{width: 20+'vw',  marginTop: -1+'vw'}}alt=""></img></div>
+           <div className="row center valign-wrapper">
+    <div className="col s12 m6 l4"><img src="assets/img/tuto/card.png" className="responsive-img" alt=""></img></div>
+    <div className="col s12 m6 l1"><img src="assets/img/tuto/arrow.png" className="responsive-img" alt=""></img></div>
+    <div className="col s12 m6 l2"><img src="assets/img/tuto/mesCombats.png" className="responsive-img" alt=""></img></div>
+    <div className="col s12 m6 l1"><img src="assets/img/tuto/arrow.png" className="responsive-img" alt=""></img></div>
+    <div className="col s12 m6 l4"><img src="assets/img/tuto/lieu.png" className="responsive-img" alt=""></img></div>
   </div>
   <div className="row center">
-    <div className="col s12 m6 l4"><span className='tutoFontSize'><b>Provoquez un adversaire en cliquant sur le poing</b></span></div>
-    <div className="col s12 m6 l1"></div>
-    <div className="col s12 m6 l3"><span className='tutoFontSize'><b>Consultez vos combats en cours</b></span></div>
-    <div className="col s12 m6 l1"></div>
-    <div className="col s12 m6 l3"><p className='tutoFontSize'><b>Selectionnez un lieu de rencontre avec votre adversaire</b></p></div>
+    <div className="col s12 m6 l4"><span className='tutoFontSize'><b>Provoquez un adversaire</b></span></div>
+    <div className="col s12 m6 l4"><span className='tutoFontSize'><b>Gérez vos combats</b></span></div>
+    <div className="col s12 m6 l4"><span className='tutoFontSize'><b>Préparez votre rencontre</b></span></div>
   </div>
   
  
@@ -107,21 +103,20 @@ class Login extends React.Component {
 <div  className="overlay">
       <div id="grade" className="parallax"><img src="assets/img/rank4.jpg"alt=""></img></div>
       <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-      <p className="logo-main center" style={{fontSize: 7+'vw'}}> Grades</p>
+      <p className="logo-main center" style={{fontSize: 7+'vw', lineHeight: 1.5}}> Grades</p>
       </div>
       
     </div>
     <div className="section white">
       <div className="row container center">
         
-       
-        <h3 className="header">Les grades?</h3>
-        <h5><p className="grey-text text-darken-3 lighten-3" style={{textAlign: 'initial'}}>Le système de grade vous permez de trouver des adversaires à votre niveau.
+       <br/>
+        <h5><p className="grey-text text-darken-3 lighten-3" style={{textAlign: 'initial', lineHeight: 1.5}}>Le système de grade vous permez de trouver des adversaires à votre niveau.
         <br></br><br></br>
-        En effet il faudra effectuer 3 combats de placement afin d'avoir un grade.<br></br><br></br>
-        Plus votre nombre de combats augmente plus votre grade se précise, ainsi le grade auxquelle vous appartenez contiendra d'autre adversaire sensisblement proche de votre niveau
+        Après 3 combats de placement, votre grade de départ sera défini.<br></br><br></br>
+        Plus votre nombre de combats augmente plus il se précise. De ce fait, vous affrontrez des adversaires de votre niveau.
          </p></h5>
-         <h5><p className="grey-text text-darken-3 lighten-3" style={{textAlign: 'initial'}}>On dénombre 9 grades:</p></h5>
+         <h5><p className="grey-text text-darken-3 lighten-3" style={{textAlign: 'initial', lineHeight: 1.5}}>On dénombre 9 grades:</p></h5>
 
          <div className="row">
     <div className="col s12 m6 l2"><p className="tutoFontSize">Iron</p></div>
@@ -153,7 +148,7 @@ class Login extends React.Component {
   </div>
                
         <br></br><br></br>
-        <h5><p className="grey-text text-darken-3 lighten-3" style={{textAlign: 'initial'}}>Une barre d'expérience en haut au millieu du menu vous indique le cours de votre progression.</p></h5>
+        <h5><p className="grey-text text-darken-3 lighten-3" style={{textAlign: 'initial', lineHeight: 1.5}}>Vous pouvez consulter votre niveau à tout moment grâce à la barre de progression.</p></h5>
         <br></br>
 <div style={{width:300+'px', margin:'auto'}}>
         
@@ -207,7 +202,7 @@ class Login extends React.Component {
          
       </div>
       <a href="#inscription" className="pass-forgot inscription">S'inscrire?</a>
-      <a className="pass-forgot">Mot de passe oublié?</a>
+      <a className="pass-forgot" href="{null}">Mot de passe oublié?</a>
 
    </div>
 
@@ -249,16 +244,16 @@ class Login extends React.Component {
                <h5 className="header lefttext-lighten-2 uberLogo" style={{fontSize: 2.2+'rem'}}>Uber <br></br>    <span className="logo-main"> Fighter</span></h5>
                   <h5 className="white-text">Contactez nous</h5>
                   <p className="grey-text text-lighten-4"><i className="material-icons">phone</i>   09 80 84 29 49</p>
-                  <p className="grey-text text-lighten-4"><i className="material-icons">mail</i>   <a className="grey-text text-lighten-3" href="mailto:uberFighter@contact.com">uberFighter@contact.com</a></p>
+                  <p className="grey-text text-lighten-4"><i className="material-icons">mail</i>   <a className="grey-text text-lighten-3" href="mailto:contact@uberfighter.com">contact@uberfighter.com</a></p>
                   
                </div>
                <div className="col l4 offset-l2 s12">
                   <h5 className="white-text">Menu</h5>
                   <ul>
-                  <h5><li><a className="grey-text text-lighten-3" href="#index-banner">Connexion</a></li>
-                  <li><a className="grey-text text-lighten-3" href="#presentation">Présentation</a></li>
-                     <li><a className="grey-text text-lighten-3" href="#combat">Les combats</a></li>
-                     <li><a className="grey-text text-lighten-3" href="#grade">Les grades</a></li>
+                  <h5><li><a className="grey-text text-lighten-3" href="#index-banner" style={{lineHeight: 1.5}}>Connexion</a></li>
+                  <li><a className="grey-text text-lighten-3" href="#presentation" style={{lineHeight: 1.5}}>Présentation</a></li>
+                     <li><a className="grey-text text-lighten-3" href="#combat" style={{lineHeight: 1.5}}>Les combats</a></li>
+                     <li><a className="grey-text text-lighten-3" href="#grade" style={{lineHeight: 1.5}}>Les grades</a></li>
                      </h5>
                   </ul>
                </div>

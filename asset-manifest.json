@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Skiwa/Uber-Fighter/static/css/main.e6dcaed9.chunk.css",
-    "main.js": "/Skiwa/Uber-Fighter/static/js/main.bf659c6d.chunk.js",
-    "main.js.map": "/Skiwa/Uber-Fighter/static/js/main.bf659c6d.chunk.js.map",
+    "main.js": "/Skiwa/Uber-Fighter/static/js/main.cbab7e06.chunk.js",
+    "main.js.map": "/Skiwa/Uber-Fighter/static/js/main.cbab7e06.chunk.js.map",
     "runtime-main.js": "/Skiwa/Uber-Fighter/static/js/runtime-main.bf9d2755.js",
     "runtime-main.js.map": "/Skiwa/Uber-Fighter/static/js/runtime-main.bf9d2755.js.map",
     "static/js/2.37483b54.chunk.js": "/Skiwa/Uber-Fighter/static/js/2.37483b54.chunk.js",
     "static/js/2.37483b54.chunk.js.map": "/Skiwa/Uber-Fighter/static/js/2.37483b54.chunk.js.map",
     "index.html": "/Skiwa/Uber-Fighter/index.html",
-    "precache-manifest.73e58eba67e693df3358ec5809d86d46.js": "/Skiwa/Uber-Fighter/precache-manifest.73e58eba67e693df3358ec5809d86d46.js",
+    "precache-manifest.97f7afe4392aa3a50ffe0bc8fd213adf.js": "/Skiwa/Uber-Fighter/precache-manifest.97f7afe4392aa3a50ffe0bc8fd213adf.js",
     "service-worker.js": "/Skiwa/Uber-Fighter/service-worker.js",
     "static/css/main.e6dcaed9.chunk.css.map": "/Skiwa/Uber-Fighter/static/css/main.e6dcaed9.chunk.css.map"
   },
@@ -16,6 +16,6 @@
     "static/js/runtime-main.bf9d2755.js",
     "static/js/2.37483b54.chunk.js",
     "static/css/main.e6dcaed9.chunk.css",
-    "static/js/main.bf659c6d.chunk.js"
+    "static/js/main.cbab7e06.chunk.js"
   ]
 }

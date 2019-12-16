@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "efdba8a33660055732825a2723743a1e",
+    "revision": "b7f16c45712f3a3837cf983ecd03c26d",
     "url": "/Skiwa/Uber-Fighter/index.html"
   },
   {
-    "revision": "4444aa7bf343d885e797",
+    "revision": "d9eda388ece5e5ce9d89",
     "url": "/Skiwa/Uber-Fighter/static/css/main.e6dcaed9.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Skiwa/Uber-Fighter/static/js/2.37483b54.chunk.js"
   },
   {
-    "revision": "4444aa7bf343d885e797",
-    "url": "/Skiwa/Uber-Fighter/static/js/main.bf659c6d.chunk.js"
+    "revision": "d9eda388ece5e5ce9d89",
+    "url": "/Skiwa/Uber-Fighter/static/js/main.cbab7e06.chunk.js"
   },
   {
     "revision": "7d9e1865fe20201f5d56",

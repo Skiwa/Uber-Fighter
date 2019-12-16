@@ -137,7 +137,7 @@ class Login extends React.Component {
     <div className="col s12 m6 l2"><img src="assets/img/rank/diamond.png" className='rankSize' data-tooltip="Diamond"alt=""></img></div>
     <div className="col s12 m6 l2"><img src="assets/img/rank/master.png" className='rankSize' data-tooltip="Master"alt=""></img></div>
     <div className="col s12 m6 l2"><img src="assets/img/rank/grandmaster.png" className='rankSize' data-tooltip="Grandmaster"alt=""></img></div>
-    <div className="col s12 m6 l2"><img src="assets/img/rank/Challenger.png" className='rankSize' data-tooltip="Challenger"alt=""></img></div>
+    <div className="col s12 m6 l2"><img src="assets/img/rank/challenger.png" className='rankSize' data-tooltip="Challenger"alt=""></img></div>
   </div>
 
   <div className="row">

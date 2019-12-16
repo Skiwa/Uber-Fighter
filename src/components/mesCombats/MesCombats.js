@@ -182,7 +182,7 @@ class MesCombats extends React.Component {
                               <div className={"col s12 conversations-summary " + (this.state.currentConversation === index ? 'conversations-summary__current ' : '') + (conversation.unread ? 'conversations-summary__unread' : '')} key={index} onClick={()=>this.changeCurrentConversation(index)}>
                                 <div className="row valign-wrapper">
                                   <div className="col s3">
-                                    <img src={"/assets/img/"+conversation.adversary.avatar+""} alt="" className="circle responsive-img"/>
+                                    <img src={"assets/img/"+conversation.adversary.avatar+""} alt="" className="circle responsive-img"/>
                                   </div>
                                   <div className="col s9">
                                     <span className="black-text conversations-summary--name">{conversation.adversary.name}</span>
@@ -205,7 +205,7 @@ class MesCombats extends React.Component {
                   <div className="col fullHeight main">
                     <div className="chat">
                       <div className="row" style={{"paddingTop" : "20px"}}>
-                        <img className="col s2 offset-s5 circle" src={"/assets/img/"+this.state.conversations[this.state.currentConversation].adversary.avatar} alt=""/>
+                        <img className="col s2 offset-s5 circle" src={"assets/img/"+this.state.conversations[this.state.currentConversation].adversary.avatar} alt=""/>
                         <span className="col s12 center-align" style={{"fontSize": "2em"}}>{this.state.conversations[this.state.currentConversation].adversary.name}</span>
                         <span className="col s12 center-align" style={{"fontSize": "1em"}}>En ligne il y a {this.state.conversations[this.state.currentConversation].adversary.lastOnline}</span>
                       </div>
@@ -222,7 +222,7 @@ class MesCombats extends React.Component {
                               {/* Message classique */}
                               {message.type!=='info' &&
                                 <div className={"chat-message " + (message.type === 'received' ? 'chat-message__received ' : '') + (message.type === 'sent' ? 'chat-message__sent ' : '')}>
-                                  <img src={"/assets/img/"+(message.type=== 'received' ? this.state.conversations[this.state.currentConversation].adversary.avatar : '') + (message.type=== 'sent' ? this.user.avatar : '')} className="responsive-img circle chat-message--avatar" alt=""/>
+                                  <img src={"assets/img/"+(message.type=== 'received' ? this.state.conversations[this.state.currentConversation].adversary.avatar : '') + (message.type=== 'sent' ? this.user.avatar : '')} className="responsive-img circle chat-message--avatar" alt=""/>
                                   <div className="chat-message--content">
                                     <span>{message.content}</span> <br/>
                                   </div>
@@ -327,7 +327,7 @@ class MesCombats extends React.Component {
                             </div>
                             <div className="row" style={{'marginBottom':'10px'}}>
                               <div className="col s12 center-align">
-                                <img src="/assets/img/saint-bruno.jpg" alt="" className="fight-info--location"/><br/>
+                                <img src="assets/img/saint-bruno.jpg" alt="" className="fight-info--location"/><br/>
                                 <span className="center-align">St-Bruno <br/>82 Cours Berriat, 38000 Grenoble <br/>Le <strong>{this.tomorrow.toLocaleDateString()}</strong> à <strong>23h00</strong></span>
                               </div>
                             </div>
@@ -335,10 +335,10 @@ class MesCombats extends React.Component {
                               <div className="col s12 center-align" >
                                 <div className="row" style={{'marginBottom':'0'}}>
                                   <div className="col s3 offset-s3" >
-                                    <img src="/assets/img/deny.svg" onClick={()=>this.refuseFightProposition()} alt="" className="responsive-img fight-info--action-icon" data-position="top" data-tooltip="Refuser" title="Refuser cette proposition" />
+                                    <img src="assets/img/deny.svg" onClick={()=>this.refuseFightProposition()} alt="" className="responsive-img fight-info--action-icon" data-position="top" data-tooltip="Refuser" title="Refuser cette proposition" />
                                   </div>
                                   <div className="col s3">
-                                    <img src="/assets/img/accept.svg"  onClick={()=>this.acceptFightProposition()} alt="" className="responsive-img fight-info--action-icon" data-position="top" data-tooltip="Accepter" title="Accepter cette proposition"/>
+                                    <img src="assets/img/accept.svg"  onClick={()=>this.acceptFightProposition()} alt="" className="responsive-img fight-info--action-icon" data-position="top" data-tooltip="Accepter" title="Accepter cette proposition"/>
                                   </div>
                                 </div>
                               </div>
@@ -355,7 +355,7 @@ class MesCombats extends React.Component {
                             </div>
                             <div className="row">
                               <div className="col s12 center-align">
-                                <img src="/assets/img/saint-bruno.jpg" alt="" className="fight-info--location"/><br/>
+                                <img src="assets/img/saint-bruno.jpg" alt="" className="fight-info--location"/><br/>
                                 <span className="center-align">St-Bruno <br/>82 Cours Berriat, 38000 Grenoble <br/>Le <strong>{this.tomorrow.toLocaleDateString()}</strong> à <strong>23h00</strong></span>
                               </div>
                             </div>
@@ -378,7 +378,7 @@ class MesCombats extends React.Component {
                             </div>
                             <div className="row">
                               <div className="col s12 center-align">
-                                <img src="/assets/img/saint-bruno.jpg" alt="" className="fight-info--location"/><br/>
+                                <img src="assets/img/saint-bruno.jpg" alt="" className="fight-info--location"/><br/>
                                 <span className="center-align">82 Cours Berriat, 38000 Grenoble <br/>Le <strong>{this.tomorrow.toLocaleDateString()}</strong> à <strong>23h00</strong></span>
                               </div>
                             </div>
@@ -410,11 +410,11 @@ class MesCombats extends React.Component {
                                   <div className="col s12 center-align">
                                     <div className="row">
                                       <div className="col s6 winner-portrait-pending">
-                                        <img className="responsive-img circle tooltipped" data-position="top" data-tooltip='toast' src={"/assets/img/"+this.user.avatar} alt="" onClick={()=>{this.changeConversationStatus(this.STATUS_FINISHED, {winner: this.user.name})}}></img>
+                                        <img className="responsive-img circle tooltipped" data-position="top" data-tooltip='toast' src={"assets/img/"+this.user.avatar} alt="" onClick={()=>{this.changeConversationStatus(this.STATUS_FINISHED, {winner: this.user.name})}}></img>
                                         <strong className="bold">{this.user.name}</strong>
                                       </div>
                                       <div className="col s6 winner-portrait-pending">
-                                        <img className="responsive-img circle tooltipped" data-position="top" data-tooltip="{this.state.conversations[this.state.currentConversation].adversary.name}" src={"/assets/img/"+this.state.conversations[this.state.currentConversation].adversary.avatar} alt="" onClick={()=>{this.changeConversationStatus(this.STATUS_FINISHED, {winner: this.state.conversations[this.state.currentConversation].adversary.name})}}></img>
+                                        <img className="responsive-img circle tooltipped" data-position="top" data-tooltip="{this.state.conversations[this.state.currentConversation].adversary.name}" src={"assets/img/"+this.state.conversations[this.state.currentConversation].adversary.avatar} alt="" onClick={()=>{this.changeConversationStatus(this.STATUS_FINISHED, {winner: this.state.conversations[this.state.currentConversation].adversary.name})}}></img>
                                         <strong>{this.state.conversations[this.state.currentConversation].adversary.name}</strong>
                                       </div>
                                     </div>
@@ -438,7 +438,7 @@ class MesCombats extends React.Component {
                                   <div className="col s12 center-align">
                                     <div className="row">
                                       <div className="col s12 notation-portrait center-align">
-                                        <img className="circle tooltipped" data-position="top" data-tooltip="{this.state.conversations[this.state.currentConversation].adversary.name}" src={"/assets/img/"+this.state.conversations[this.state.currentConversation].adversary.avatar} alt=""></img>
+                                        <img className="circle tooltipped" data-position="top" data-tooltip="{this.state.conversations[this.state.currentConversation].adversary.name}" src={"assets/img/"+this.state.conversations[this.state.currentConversation].adversary.avatar} alt=""></img>
                                         <strong style={{'marginBottom':'5px'}}>{this.state.conversations[this.state.currentConversation].adversary.name}</strong>
                                         <div className="notation-portrait--stars valign-wrapper">
                                           <strong>Fair-play</strong>

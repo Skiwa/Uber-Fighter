@@ -29,7 +29,7 @@ export default function App() {
           <Link to="/" className="brand-logo">Uber <span className="logo-main"> Fighter</span></Link>
         </div>
 
-        {window.location.pathname !== "/" && 
+        {(window.location.pathname !== "/" || window.location.pathname !== "/#" || window.location.pathname !== "/#/" || window.location.pathname !== "/#/!") && 
         
         
         <React.Fragment>

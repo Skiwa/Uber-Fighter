@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Skiwa/Uber-Fighter/precache-manifest.f6f3f0b62bd9978f8f792bf2ade76ea1.js"
+  "/Skiwa/Uber-Fighter/precache-manifest.9b20979dddaa68b32de6ed4cdaa6dd07.js"
 );
 
 self.addEventListener('message', (event) => {

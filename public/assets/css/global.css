@@ -236,3 +236,9 @@
   color: white !important;
   background-color: #ED2553 !important;
 }
+
+
+span.filterValue{
+  color: #f5008b !important;
+  font-weight: bold;
+}

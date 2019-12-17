@@ -1,9 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/core/Slider';
 import Typography from '@material-ui/core/Typography';
-import Tooltip from '@material-ui/core/Tooltip';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -14,39 +12,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function ValueLabelComponent(props) {
-  const { children, open, value } = props;
-
-  const popperRef = React.useRef(null);
-  React.useEffect(() => {
-    if (popperRef.current) {
-      popperRef.current.update();
-    }
-  });
-
-  return (
-    <Tooltip
-      PopperProps={{
-        popperRef,
-      }}
-      open={open}
-      enterTouchDelay={0}
-      placement="top"
-      title={value}
-    >
-      {children}
-    </Tooltip>
-  );
-}
-
-ValueLabelComponent.propTypes = {
-  children: PropTypes.element.isRequired,
-  open: PropTypes.bool.isRequired,
-  value: PropTypes.number.isRequired,
-};
-
-
-  const marks = [
+  const marksPoids = [
     {
       value: 50,
       label: '50kg',
@@ -62,7 +28,7 @@ ValueLabelComponent.propTypes = {
     {
       value: 199,
       label: '200kg',
-    },
+    }
   ];
   const marksAge = [
     {
@@ -76,18 +42,8 @@ ValueLabelComponent.propTypes = {
     {
       value: 50,
       label: '50',
-    },
-    {
-      value: 70,
-      label: '70',
-    },
-    {
-      value: 89,
-      label: '90',
-    },
-  
+    }
   ];
-
   const marksLocalisation = [
     {
       value: 0,
@@ -108,7 +64,7 @@ ValueLabelComponent.propTypes = {
     {
       value: 79,
       label: '80km',
-    },
+    }
   ];
   const marksTaille = [
     {
@@ -130,15 +86,17 @@ ValueLabelComponent.propTypes = {
     {
       value: 229,
       label: '230cm',
-    },
+    }
   ];
   
 
 const PrettoSlider = withStyles({
+  //Style barre
   root: {
     color: '#f5008b',
     height: 8,
   },
+  //Style curseur
   thumb: {
     height: 24,
     width: 24,
@@ -151,49 +109,68 @@ const PrettoSlider = withStyles({
     },
   },
   active: {},
+  //Bulle avec valeur
   valueLabel: {
     left: 'calc(-50% + 4px)',
   },
+  //Barre complétée
   track: {
     height: 8,
     borderRadius: 4,
   },
+  //Barre non complétée
   rail: {
     height: 8,
     borderRadius: 4,
   },
-})(Slider);
+})(Slider);//Slider avec style par défaut
 
 
-export default function CustomizedSlider() {
-  const classes = useStyles();
+export default class CustomizedSlider extends React.Component {
+  classes = useStyles;
 
-  return (
-    <div className={classes.root}>
+  constructor(props){
+    super(props);
 
-      <Typography gutterBottom>Localisation à proximité</Typography>
-      <PrettoSlider valueLabelDisplay="auto"  min= {0} max={80} step={5} marks={marksLocalisation} aria-label="pretto slider" defaultValue={20} />
-      <div className={classes.margin} />
-      <Typography gutterBottom>Taille max</Typography>
-      <PrettoSlider valueLabelDisplay="auto" min= {150} max={230} step={1} marks={marksTaille} aria-label="pretto slider" defaultValue={170} />
-      <div className={classes.margin} />
-      <div>
+    this.state = {valueLocalisation : 20,valueTaille : 170,valuePoids : 60,valueAge : 18}
+  }
+
+  handleChange = (event, newValue, type) =>{    
+    switch(type){
+      case 'localisation':this.setState({valueLocalisation : newValue});break;
+      case 'taille':this.setState({valueTaille : newValue});break;
+      case 'poids':this.setState({valuePoids : newValue});break;
+      case 'age':this.setState({valueAge : newValue});break;    
+      default:
+      break;
+    }
+  }
+
+  render(){
+    return (
+      <div className={this.classes.root} style={{padding: '0 30px'}}>
+  
+        <Typography id="range-slider" gutterBottom>¨Proximité : <span className="filterValue">{this.state.valueLocalisation} km </span></Typography>
+        <PrettoSlider valueLabelDisplay="auto"  min= {0} max={80} step={5} marks={marksLocalisation} aria-label="pretto slider" defaultValue={20}  onChange={(event,newValue)=>this.handleChange(event,newValue,'localisation')}/>
         
-      <Typography gutterBottom>Poids max</Typography>
-      <div className="row">
-      <div className="col s12 m4 l1">
-      <img src="assets/img/Skinny.png" className="miniIconFilterToLeft" alt="" /></div>
-      <div className="col s12 m4 l10">
-      <PrettoSlider valueLabelDisplay="auto" min= {50} max={200} step={10} marks={marks} aria-label="pretto slider" defaultValue={60} /></div>
-      <div className="col s12 m4 l1">
-      <img src="assets/img/Fat.png" className="miniIconFilterToRight" alt="" /></div>
+        <div className={this.classes.margin} />
+       
+        <Typography gutterBottom>Taille max : <span className="filterValue">{this.state.valueTaille} cm </span></Typography>
+        <PrettoSlider valueLabelDisplay="auto" min= {150} max={230} step={10} marks={marksTaille} aria-label="pretto slider" defaultValue={170} onChange={(event,newValue)=>this.handleChange(event,newValue,'taille')}/>
+        
+        <div className={this.classes.margin} />
+        
+        <Typography gutterBottom>Poids max : <span className="filterValue">{this.state.valuePoids} kg</span></Typography>
+        <PrettoSlider valueLabelDisplay="auto" min= {50} max={200} step={10} marks={marksPoids} aria-label="pretto slider" defaultValue={60} onChange={(event,newValue)=>this.handleChange(event,newValue,'poids')}/>
+        
+        <div className={this.classes.margin} />
+  
+        <Typography gutterBottom>Age max : <span className="filterValue">{this.state.valueAge} ans</span></Typography>
+        <PrettoSlider valueLabelDisplay="auto" min= {18} max={50} step={1} marks={marksAge} aria-label="pretto slider" defaultValue={18} onChange={(event,newValue)=>this.handleChange(event,newValue,'age')} />
+        
+        <div className={this.classes.margin} />
       </div>
-      
-      </div>
-      <div className={classes.margin} />
-      <Typography gutterBottom>Age max</Typography>
-      <PrettoSlider valueLabelDisplay="auto" min= {18} max={90} step={1} marks={marksAge} aria-label="pretto slider" defaultValue={20} />
-      <div className={classes.margin} />
-    </div>
-  );
+    );
+  }
+  
 }

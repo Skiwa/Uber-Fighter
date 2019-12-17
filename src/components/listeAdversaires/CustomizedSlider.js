@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     },
     {
       value: 199,
-      label: '200kg',
+      label: '200kg+',
     }
   ];
   const marksAge = [
@@ -41,7 +41,7 @@ const useStyles = makeStyles(theme => ({
     },
     {
       value: 50,
-      label: '50',
+      label: '50+',
     }
   ];
   const marksLocalisation = [
@@ -63,7 +63,7 @@ const useStyles = makeStyles(theme => ({
     },
     {
       value: 79,
-      label: '80km',
+      label: '80km+',
     }
   ];
   const marksTaille = [
@@ -85,7 +85,7 @@ const useStyles = makeStyles(theme => ({
     },
     {
       value: 229,
-      label: '230cm',
+      label: '230cm+',
     }
   ];
   
@@ -132,15 +132,15 @@ export default class CustomizedSlider extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = {valueLocalisation : 20,valueTaille : 170,valuePoids : 60,valueAge : 18}
+    this.state = {valueLocalisation : 20 + " km",valueTaille : 170 + " cm",valuePoids : 60 + " kg",valueAge : 18 +" ans"}
   }
 
   handleChange = (event, newValue, type) =>{    
     switch(type){
-      case 'localisation':this.setState({valueLocalisation : newValue});break;
-      case 'taille':this.setState({valueTaille : newValue});break;
-      case 'poids':this.setState({valuePoids : newValue});break;
-      case 'age':this.setState({valueAge : newValue});break;    
+      case 'localisation':this.setState({valueLocalisation : newValue !== 80 ? newValue + " km": newValue + " km et +"});break;
+      case 'taille':this.setState({valueTaille : newValue !== 230 ? newValue + " cm": newValue + " cm et +"});break;
+      case 'poids':this.setState({valuePoids : newValue !== 200 ? newValue + " kg": newValue + " kg et +" });break;
+      case 'age':this.setState({valueAge : newValue !== 50 ? newValue + " ans": newValue + " ans et +" });break;    
       default:
       break;
     }
@@ -150,22 +150,22 @@ export default class CustomizedSlider extends React.Component {
     return (
       <div className={this.classes.root} style={{padding: '0 30px'}}>
   
-        <Typography id="range-slider" gutterBottom>¨Proximité : <span className="filterValue">{this.state.valueLocalisation} km </span></Typography>
+        <Typography id="range-slider" gutterBottom>¨Proximité : <span className="filterValue">{this.state.valueLocalisation}</span></Typography>
         <PrettoSlider valueLabelDisplay="auto"  min= {0} max={80} step={5} marks={marksLocalisation} aria-label="pretto slider" defaultValue={20}  onChange={(event,newValue)=>this.handleChange(event,newValue,'localisation')}/>
         
         <div className={this.classes.margin} />
        
-        <Typography gutterBottom>Taille max : <span className="filterValue">{this.state.valueTaille} cm </span></Typography>
+        <Typography gutterBottom>Taille max : <span className="filterValue">{this.state.valueTaille}</span></Typography>
         <PrettoSlider valueLabelDisplay="auto" min= {150} max={230} step={10} marks={marksTaille} aria-label="pretto slider" defaultValue={170} onChange={(event,newValue)=>this.handleChange(event,newValue,'taille')}/>
         
         <div className={this.classes.margin} />
         
-        <Typography gutterBottom>Poids max : <span className="filterValue">{this.state.valuePoids} kg</span></Typography>
+        <Typography gutterBottom>Poids max : <span className="filterValue">{this.state.valuePoids}</span></Typography>
         <PrettoSlider valueLabelDisplay="auto" min= {50} max={200} step={10} marks={marksPoids} aria-label="pretto slider" defaultValue={60} onChange={(event,newValue)=>this.handleChange(event,newValue,'poids')}/>
         
         <div className={this.classes.margin} />
   
-        <Typography gutterBottom>Age max : <span className="filterValue">{this.state.valueAge} ans</span></Typography>
+        <Typography gutterBottom>Age max : <span className="filterValue">{this.state.valueAge}</span></Typography>
         <PrettoSlider valueLabelDisplay="auto" min= {18} max={50} step={1} marks={marksAge} aria-label="pretto slider" defaultValue={18} onChange={(event,newValue)=>this.handleChange(event,newValue,'age')} />
         
         <div className={this.classes.margin} />

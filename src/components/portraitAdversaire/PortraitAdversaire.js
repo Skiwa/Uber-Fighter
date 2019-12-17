@@ -28,6 +28,7 @@ class PortraitAdversaire extends React.Component {
               <div className="card-content activator mouse-pointer">
                 <span className="card-title activator">
                   <strong>{this.props.adversaire.prenom}</strong>, {this.props.adversaire.age}
+                  <i className="material-icons right">keyboard_arrow_up</i>
                 </span>
                 <div>
                   <p className="activator">
@@ -39,7 +40,7 @@ class PortraitAdversaire extends React.Component {
                 {this.props.adversaire.sports.map((sport, index) => {
                   return <div className="chip" key={index}>{sport}</div>
                 })}
-                <a className="btn-floating halfway-fab waves-effect waves-light red btn-large btn-provoc" href="{null}" style={{pointerEvents:'none'}}>
+                <a className="btn-floating halfway-fab waves-effect waves-light red btn-large btn-provoc" >
                   <img src="assets/img/provoc.svg" alt="" />
                 </a>
               </div>

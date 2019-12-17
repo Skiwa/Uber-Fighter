@@ -24,8 +24,11 @@ class ListeAdversaires extends React.Component {
     this.adversaires.push(new AdversaireEntité('assets/img/alexandre.jpg','Alexandre',28,90,'1m80', 'Ma mission, quand vous êtes dans le cabinet du président de la République, elle est permanente. Quand je rentrais chez moi, je rentrais avec mon arme sur moi, un Glock 43, jusqu\'à mon domicile', ['MMA', 'Krav Maga', 'Karaté']));
     this.adversaires.push(new AdversaireEntité('assets/img/kaaris.jpg', 'Kaaris', 39, 100, '1m80', 'Les flics fachos rôtissent, même les manchots m’applaudissent.', ['MMA','Boxe']));
     this.adversaires.push(new AdversaireEntité('assets/img/jean-pierre.jpg', 'Jean Pierre', 69, 76, '1m80', 'Coucou TF1.', ['Pétanque']));
-    this.adversaires.push(new AdversaireEntité('assets/img/laurent.jpg', 'Laurent', 56, 73, '1m83', 'Salut c\'est Laurent Ruquier.', ['Marche rapide']));
-    this.adversaires.push(new AdversaireEntité('assets/img/laurent.jpg', 'Laurent', 56, 73, '1m83', 'Salut c\'est Laurent Ruquier.', ['Marche rapide']));
+    this.adversaires.push(new AdversaireEntité('assets/img/persona/luka.png', 'Lucas', 22, 60, '1m70', '', ['Crochetage']));
+    this.adversaires.push(new AdversaireEntité('assets/img/persona/moh.png', 'Mohamed', 24, 90, '1m83', 'J\'aime le sexes.', ['Musculation']));
+    this.adversaires.push(new AdversaireEntité('assets/img/persona/merwan.jpg', 'Merwan', 23, 100, '1m85', 'Ok tu fais le chaud mais si la vie te frappe tu vas ramener qui ?', ['Jujitsu brésilien']));
+    this.adversaires.push(new AdversaireEntité('assets/img/persona/sadok.jpg', 'Sadok', 23, 72, '1m75', 'Faire de l\'argent pour plus avoir besoin d\'argent', ['Coach teamspeak']));
+    this.adversaires.push(new AdversaireEntité('assets/img/persona/didux.png', 'Dylan', 24, 110, '1m84', 'je vend une mini Cooper r56 110cv 200 000klm full option', ['Escrime']));
   }
 
   render() {
@@ -74,7 +77,7 @@ class ListeAdversaires extends React.Component {
             <img src="assets/img/provoc.svg" className="miniProvocImg" alt="" />
           </span> pour <b>provoquer</b> un adversaire</p>
         <div className="divider"></div>
-        <p><b>23 adversaires disponibles</b></p>
+        <p><b>8 adversaires disponibles</b></p>
         <br/>
 
         <div className="row">

@@ -313,7 +313,7 @@ class MesCombats extends React.Component {
                             </div>
                             <div className="row">
                               <div className="col s12 center-align">
-                                <a className="waves-effect waves-light btn btn-large pinkCustom" href='# ' onClick={()=>{this.changeConversationStatus(this.STATUS_PROPOSITION_SENT)}}><i className="material-icons right">send</i>Envoyer</a>
+                                <a className="waves-effect waves-light btn btn-large pinkCustom" onClick={()=>{this.changeConversationStatus(this.STATUS_PROPOSITION_SENT)}}><i className="material-icons right">send</i>Envoyer</a>
                               </div>
                             </div>
                           </React.Fragment>
@@ -387,7 +387,7 @@ class MesCombats extends React.Component {
                               <div className="col s12 center-align" >
                                 <div className="row">
                                   <div className="col s12 center-align">
-                                    <a className="waves-effect waves-light btn btn-large pinkCustom" href='# ' onClick={()=>{this.changeConversationStatus(this.STATUS_WINNER_PENDING)}}>Combat terminé</a>
+                                    <a className="waves-effect waves-light btn btn-large pinkCustom" onClick={()=>{this.changeConversationStatus(this.STATUS_WINNER_PENDING)}}>Combat terminé</a>
                                   </div>
                                 </div>
                               </div>

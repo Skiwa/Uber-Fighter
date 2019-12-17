@@ -4,6 +4,7 @@ import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/core/Slider';
 import Typography from '@material-ui/core/Typography';
 import Tooltip from '@material-ui/core/Tooltip';
+import Input from '@material-ui/core/Input'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -167,33 +168,54 @@ const PrettoSlider = withStyles({
 
 export default function CustomizedSlider() {
   const classes = useStyles();
+  const [value, setValue] = React.useState(30);
+  const handleSliderChangeTaille = (event, newValueTaille) => {
+    setValue(newValueTaille);
+  };
+  const handleSliderChangeLocal = (event, newValue) => {
+    setValue(newValue);
+  };
+  const handleInputChange = event => {
+    console.log(event.target)
+    setValue(event.target.value === '' ? '' : Number(event.target.value));
+  };
+  const handleInputChangeTaille = event => {
+    setValue(event.target.value === '' ? '' : Number(event.target.value));
+  };
 
   return (
     <div className={classes.root}>
 
-      <Typography gutterBottom>Localisation à proximité</Typography>
-      <PrettoSlider valueLabelDisplay="auto"  min= {0} max={80} step={5} marks={marksLocalisation} aria-label="pretto slider" defaultValue={20} />
+  <Typography gutterBottom ><h5><i class="fas fa-map-marker-alt"></i>  Proximité</h5></Typography>
+  <Input
+            className={classes.input}
+            value={value}
+
+            
+          />
+      <PrettoSlider valueLabelDisplay="auto"  min= {0} max={80} step={5} marks={marksLocalisation} aria-label="pretto slider" defaultValue={20} aria-valuetext onChange={handleSliderChangeLocal} />
       <div className={classes.margin} />
-      <Typography gutterBottom>Taille max</Typography>
-      <PrettoSlider valueLabelDisplay="auto" min= {150} max={230} step={1} marks={marksTaille} aria-label="pretto slider" defaultValue={170} />
-      <div className={classes.margin} />
-      <div>
-        
-      <Typography gutterBottom>Poids max</Typography>
-      <div className="row">
-      <div className="col s12 m4 l1">
-      <img src="assets/img/Skinny.png" className="miniIconFilterToLeft" alt="" /></div>
-      <div className="col s12 m4 l10">
-      <PrettoSlider valueLabelDisplay="auto" min= {50} max={200} step={10} marks={marks} aria-label="pretto slider" defaultValue={60} /></div>
-      <div className="col s12 m4 l1">
-      <img src="assets/img/Fat.png" className="miniIconFilterToRight" alt="" /></div>
-      </div>
+     
       
-      </div>
+      <Typography  gutterBottom><h5><i class="fas fa-arrows-alt-v"></i>  Taille max</h5></Typography>
+      <Input
+            className={classes.input}
+            value={value}
+            margin="dense"
+            onChange={handleInputChangeTaille}
+ 
+          />
+      <PrettoSlider valueLabelDisplay="auto" min= {150} max={230} step={1} marks={marksTaille} aria-label="pretto slider" defaultValue={170} onChange={handleSliderChangeTaille} />
+        
+      <Typography gutterBottom><h5><i className="fas fa-weight-hanging"></i>  Poids max</h5></Typography>
+      <PrettoSlider valueLabelDisplay="auto" min= {50} max={200} step={10} marks={marks} aria-label="pretto slider" defaultValue={60} />
+      
+      
       <div className={classes.margin} />
-      <Typography gutterBottom>Age max</Typography>
+      <Typography gutterBottom><h5><i class="fas fa-birthday-cake"></i>  Age max</h5></Typography>
+      
       <PrettoSlider valueLabelDisplay="auto" min= {18} max={90} step={1} marks={marksAge} aria-label="pretto slider" defaultValue={20} />
-      <div className={classes.margin} />
+      
     </div>
   );
 }

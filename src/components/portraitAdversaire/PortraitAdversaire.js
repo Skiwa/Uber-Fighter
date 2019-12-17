@@ -28,6 +28,7 @@ class PortraitAdversaire extends React.Component {
               <div className="card-content activator mouse-pointer">
                 <span className="card-title activator">
                   <strong>{this.props.adversaire.prenom}</strong>, {this.props.adversaire.age}
+                  <i className="material-icons right">keyboard_arrow_up</i>
                 </span>
                 <div>
                   <p className="activator">

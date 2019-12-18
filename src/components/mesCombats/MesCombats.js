@@ -60,7 +60,7 @@ class MesCombats extends React.Component {
             weight:'100',
             height:'1m80',
             rank:'Silver',
-            description: 'Description',
+            description: 'jv teclater',
             sports : ['MMA', 'Krav Maga', 'Karaté']
           }
         },

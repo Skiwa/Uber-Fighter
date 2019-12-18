@@ -17,7 +17,7 @@ class PortraitAdversaire extends React.Component {
                           <i className="material-icons yellow-text star-valign textShadow">
                             star
                           </i>
-                          <b className="textShadow">4.92</b>
+                          <b className="textShadow">{this.props.adversaire.note}</b>
                           
                         </span>
                       </div>

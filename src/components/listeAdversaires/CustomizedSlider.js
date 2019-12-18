@@ -132,7 +132,7 @@ export default class CustomizedSlider extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = {valueLocalisation : 20 + " km",valueTaille : 170 + " cm",valuePoids : 60 + " kg",valueAge : 18 +" ans"}
+    this.state = {valueLocalisation : 20 + " km",valueTaille : 190 + " cm",valuePoids : 110 + " kg",valueAge : 50 +" ans et +"}
   }
 
   handleChange = (event, newValue, type) =>{    
@@ -144,29 +144,36 @@ export default class CustomizedSlider extends React.Component {
       default:
       break;
     }
+
+    this.sendData({newValue: newValue, type:type});
+    
+  }
+
+  sendData = (data) => {
+    this.props.slidersCallback(data);
   }
 
   render(){
     return (
       <div className={this.classes.root} style={{padding: '0 30px'}}>
   
-        <Typography id="range-slider" gutterBottom><h6><i class="fas fa-map-marker-alt"></i>  Proximité : <span className="filterValue">{this.state.valueLocalisation}</span></h6></Typography>
+        <Typography id="range-slider" gutterBottom><h6><i className="fas fa-map-marker-alt"></i>  Proximité : <span className="filterValue">{this.state.valueLocalisation}</span></h6></Typography>
         <PrettoSlider valueLabelDisplay="auto"  min= {0} max={80} step={5} marks={marksLocalisation} aria-label="pretto slider" defaultValue={20}  onChange={(event,newValue)=>this.handleChange(event,newValue,'localisation')}/>
         
         <div className={this.classes.margin} />
        
-        <Typography gutterBottom><h6><i class="fas fa-arrows-alt-v"></i>  Taille max : <span className="filterValue">{this.state.valueTaille}</span></h6></Typography>
-        <PrettoSlider valueLabelDisplay="auto" min= {150} max={230} step={10} marks={marksTaille} aria-label="pretto slider" defaultValue={170} onChange={(event,newValue)=>this.handleChange(event,newValue,'taille')}/>
+        <Typography gutterBottom><h6><i className="fas fa-arrows-alt-v"></i>  Taille max : <span className="filterValue">{this.state.valueTaille}</span></h6></Typography>
+        <PrettoSlider valueLabelDisplay="auto" min= {150} max={230} step={10} marks={marksTaille} aria-label="pretto slider" defaultValue={190} onChange={(event,newValue)=>this.handleChange(event,newValue,'taille')}/>
         
         <div className={this.classes.margin} />
         
         <Typography gutterBottom><h6><i className="fas fa-weight-hanging"></i>  Poids max : <span className="filterValue">{this.state.valuePoids}</span></h6></Typography>
-        <PrettoSlider valueLabelDisplay="auto" min= {50} max={200} step={10} marks={marksPoids} aria-label="pretto slider" defaultValue={60} onChange={(event,newValue)=>this.handleChange(event,newValue,'poids')}/>
+        <PrettoSlider valueLabelDisplay="auto" min= {50} max={200} step={10} marks={marksPoids} aria-label="pretto slider" defaultValue={110} onChange={(event,newValue)=>this.handleChange(event,newValue,'poids')}/>
         
         <div className={this.classes.margin} />
   
-        <Typography gutterBottom><h6><i class="fas fa-birthday-cake"></i>  Age max : <span className="filterValue">{this.state.valueAge}</span></h6></Typography>
-        <PrettoSlider valueLabelDisplay="auto" min= {18} max={50} step={1} marks={marksAge} aria-label="pretto slider" defaultValue={18} onChange={(event,newValue)=>this.handleChange(event,newValue,'age')} />
+        <Typography gutterBottom><h6><i className="fas fa-birthday-cake"></i>  Age max : <span className="filterValue">{this.state.valueAge}</span></h6></Typography>
+        <PrettoSlider valueLabelDisplay="auto" min= {18} max={50} step={1} marks={marksAge} aria-label="pretto slider" defaultValue={50} onChange={(event,newValue)=>this.handleChange(event,newValue,'age')} />
         
         <div className={this.classes.margin} />
       </div>
